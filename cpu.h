@@ -13,9 +13,12 @@ typedef struct { // struct da estrutura das instruções
     uint8_t opcode;
     uint8_t type;
     uint8_t rd;
-    uint8_t rn;
-    uint8_t rm;
+    uint8_t rn;  // R1
+    uint8_t rm;  // R2
     uint64_t imm;
 } instruction;
+
+uint64_t reg_read(CPU *cpu, int reg);  // Leitura
+void reg_write(CPU *cpu, int reg, uint64_t value);  //  Escrita
 
 #endif
