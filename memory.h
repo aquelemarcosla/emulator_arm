@@ -4,7 +4,7 @@
 
 #define MEM_SIZE 131072
 
-uint8_t memory[MEM_SIZE];
+extern uint8_t memory[MEM_SIZE]; // extern para memoria só existir em memory.c
 
 uint64_t mem_read(uint64_t address);
 
