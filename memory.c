@@ -4,7 +4,7 @@
 uint64_t mem_read(uint64_t address) {
     uint64_t result = 0;
 
-    if (address > MEM_SIZE) {
+    if (address + 7 >= MEM_SIZE) { // verifica se o endereço acessado mais alinhamento não ultrapassa o limite
         // limite
     }
 
