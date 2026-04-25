@@ -11,7 +11,7 @@ instruction buildInsR(uint32_t data) {
 
 instruction decode(uint32_t data) {
     instruction inst;
-    uint16_t testIns = GET_BITS(data, 28, 0xFF);
+    uint16_t testIns = GET_BITS(data, 24, 0xFF); // Mascara e obtensão do opcode
 
     switch (testIns) {
         case 0:  // type R
