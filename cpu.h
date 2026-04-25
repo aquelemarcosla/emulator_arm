@@ -15,11 +15,11 @@ typedef struct { // struct da instrução
     uint8_t rd;
     uint8_t rn;  // R1
     uint8_t rm;  // R2
-    uint64_t imm;
+    int64_t imm;   // Imediatos com sinal para possiveis negativos
 } instruction;
 
-uint64_t reg_read(CPU *cpu, int reg);  // Leitura
+uint64_t reg_read(CPU *cpu, int reg);  // Leitura de registrador
 
-void reg_write(CPU *cpu, int reg, uint64_t value);  //  Escrita
+void reg_write(CPU *cpu, int reg, uint64_t value);  //  Escrita de registrador
 
 #endif
