@@ -1,7 +1,7 @@
 # Emulador Aarch64 em C
 
-## DOCUMENTAÇÃO COMPLETA https://docs.google.com/document/d/1nCxWcpsC2XD4zM9s9ckRc43idRU_xRvVgKaxZFFLdBc/edit?usp=sharing
-## ESTE DOCUMENTO ESTÁ EM CONSTANTE ALTERAÇÃO, NÃO SE TRATA DE UM DOCUMENTO FINAL.
+## DOCUMENTAÇÃO COMPLETA (EM DESENVOLVIMENTO)
+https://docs.google.com/document/d/1nCxWcpsC2XD4zM9s9ckRc43idRU_xRvVgKaxZFFLdBc/edit?usp=sharing
 
 # Sobre o projeto
 Este projeto está sendo desenvolvido para consolidação e aplicação prática dos conhecimentos adquiridos sobre arquitetura de computadores e desenvolvimento de sistemas de baixo nível.
