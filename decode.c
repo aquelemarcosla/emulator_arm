@@ -8,20 +8,33 @@
  */
 #define GET_BITS(data, shift, mask) (((data) >> (shift)) & (mask))
 
-instruction buildInsR(uint32_t data) {
-    instruction inst;
+instruction buildDPI(uint32_t data) {  // Data Processing - Immediate
 
+}
+
+instruction buildDPR(uint32_t data) { // Data Processing - Register
+
+}
+
+instruction buildB(uint32_t data) {  // Branches
+
+}
+
+instruction buildM(uint32_t data) { // Memory Access
 
 }
 
 instruction decode(uint32_t data) {
     instruction inst;
-    uint16_t testIns = GET_BITS(data, 24, 0xFF);
+    uint8_t op1 = GET_BITS(data, 25, 0xF); // Preserva somente [28:25] opcode primário major group
 
-    switch (testIns) {
-        case 0:  // type R
-            return buildInsR(data);
-        case 1:  // type I
-
+    if ((op1 & 0xE) == 0x8) {
+        return buildDPR(data);
+    } else if ((op1 & 0xE) == 0xA){
+        return buildDPI(data);
+    } else if ((op1 & 0x7) == 0x5){
+        return buildB(data);
+    } else if ((op1 & 0x5) == 0x4) {
+        return buildM(data);
     }
 }
