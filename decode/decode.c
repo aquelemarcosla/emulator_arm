@@ -1,4 +1,4 @@
-#include "cpu.h"
+#include "../cpu/cpu.h"
 #include "stdint.h"
 #include "decode.h"
 
@@ -28,6 +28,10 @@ instruction decode(uint32_t data) {
     instruction inst;
     uint8_t op1 = GET_BITS(data, 25, 0xF); // Preserva somente [28:25] opcode primário major group
 
+    /*
+     *  Teste dos bits [28:25] para calssificação do major group
+     *  Usei mascára para isolar os bits
+     */
     if ((op1 & 0xE) == 0x8) {
         return buildDPR(data);
     } else if ((op1 & 0xE) == 0xA){

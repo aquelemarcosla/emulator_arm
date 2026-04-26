@@ -5,8 +5,8 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(emulador_arm
         main.c
-        cpu.c
-        memory.c
-        decode.c
-        execute.c
+        cpu/cpu.c
+        memory/memory.c
+        decode/decode.c
+        execute/execute.c
 )
