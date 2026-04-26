@@ -34,10 +34,10 @@ instruction decode(uint32_t data) {
      */
     if ((op1 & 0xE) == 0x8) {  // op1 == 100x DATA PROCESSING IMMEDIATE
         return buildDPI(data);
-    } else if ((op1 & 0xE) == 0xA){  // op1 == 101x DATA PROCESSING REGISTER
-        return buildDPR(data);
-    } else if ((op1 & 0x7) == 0x5){  // op1 == x101 BRANCH
+    } else if ((op1 & 0xE) == 0xA){  // op1 == 101x BRANCH
         return buildB(data);
+    } else if ((op1 & 0x7) == 0x5){  // op1 == x101 DATA PROCESSING REGISTER
+        return buildDPR(data);
     } else if ((op1 & 0x5) == 0x4) {  // op1 == x1x0 MEMORY ACCESS
         return buildM(data);
     }
