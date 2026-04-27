@@ -4,9 +4,9 @@
 #include <stdint.h>
 
 typedef struct {
-    uint64_t regs[32]; // 32 registradores de 64 bits
-    uint64_t pc;  // Registrador Program Counter
-    uint64_t sp;  // Registrador Stack Pointer
+    uint64_t regs[32]; // 0 - 31
+    uint64_t pc;  // Program Counter (reg 32)
+    uint64_t sp;  // Registrador Stack Pointer (reg 33)
 } CPU;
 
 typedef struct { // struct da instrução
