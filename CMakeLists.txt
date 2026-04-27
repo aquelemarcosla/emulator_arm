@@ -13,7 +13,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(unity)
 
-# cria a lib unity
+# Lib Unity
 add_library(unity_lib
         ${unity_SOURCE_DIR}/src/unity.c
 )
@@ -22,9 +22,7 @@ target_include_directories(unity_lib PUBLIC
         ${unity_SOURCE_DIR}/src
 )
 
-# ------------------------
 # Executável principal
-# ------------------------
 add_executable(emulador_arm
         main.c
         cpu/cpu.c
@@ -33,11 +31,13 @@ add_executable(emulador_arm
         execute/execute.c
 )
 
-# ------------------------
 # Executável de teste
-# ------------------------
 add_executable(tests
         tests/test_cpu.c
+        cpu/cpu.c
+        memory/memory.c
+        decode/decode.c
+        execute/execute.c
 )
 
 target_link_libraries(tests unity_lib)
