@@ -1,11 +1,11 @@
-Emulador AArch64 em C
+# Emulador AArch64 em C
 
 Emulador da arquitetura ARMv8/v9 (AArch64) desenvolvido em C, com foco em compreensão prática de execução de instruções, organização interna da CPU e separação entre etapas como decode e execute.
 
 DOCUMENTAÇÃO (em desenvolvimento):
 https://docs.google.com/document/d/1nCxWcpsC2XD4zM9s9ckRc43idRU_xRvVgKaxZFFLdBc/edit?usp=sharing
 
-Sobre o projeto
+## Sobre o projeto
 
 Este projeto tem como objetivo implementar, de forma explícita, o funcionamento básico de uma CPU AArch64, incluindo:
 
@@ -19,7 +19,7 @@ A proposta não é abstrair o funcionamento, mas expor as decisões e estruturas
 
 O projeto está em evolução contínua e novos conjuntos de instruções e melhorias estruturais estão sendo adicionados progressivamente.
 
-Desafios técnicos
+## Desafios técnicos
 
 Alguns dos pontos centrais durante o desenvolvimento:
 
