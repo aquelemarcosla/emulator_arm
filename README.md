@@ -1,19 +1,34 @@
-# Emulador Aarch64 em C
+Emulador AArch64 em C
 
-DOCUMENTAÇÃO(EM DESENVOLVIMENTO)
+Emulador da arquitetura ARMv8/v9 (AArch64) desenvolvido em C, com foco em compreensão prática de execução de instruções, organização interna da CPU e separação entre etapas como decode e execute.
+
+DOCUMENTAÇÃO (em desenvolvimento):
 https://docs.google.com/document/d/1nCxWcpsC2XD4zM9s9ckRc43idRU_xRvVgKaxZFFLdBc/edit?usp=sharing
 
-# Sobre o projeto
-Este projeto está sendo desenvolvido para consolidação e aplicação prática dos conhecimentos adquiridos sobre arquitetura de computadores e desenvolvimento de sistemas de baixo nível.
+Sobre o projeto
 
-Neste projeto será desenvolvido um emulador da arquitetura ARMv8/v9 seguindo o padrão ISA AArch64 como instrução padronizada. A tecnologia escolhida a princípio foi a linguagem C11 e pode sofrer alterações futuras conforme necessidades.
+Este projeto tem como objetivo implementar, de forma explícita, o funcionamento básico de uma CPU AArch64, incluindo:
 
-Este documento visa estabelecer regras e as normas do planejamento, tratará sobre a estrutura de cada componente e regras de aplicação que deverão ser seguidas ou referenciadas.
+Decode manual de instruções
+Modelagem de registradores
+Separação entre etapas de execução (decode / execute)
+Organização de memória
+Testes unitários para validação de comportamento da CPU
 
-# Sobre o autor
-Me chamo Marcos, tenho 22 anos e curso engenharia de computação pelo Instituto Federal do Sul de Minas. Tenho um interesse profundo por inovação tecnológica, acredito ser algo intrínseco ao ser humano e a arquitetura ARM tem tudo o que é necessário para ser parte dessa inovação latente.
+A proposta não é abstrair o funcionamento, mas expor as decisões e estruturas envolvidas na execução de instruções em baixo nível.
 
-Gosto de computadores desde que tinha 7 anos de idade, parte disso é culpa de meu pai que formatava e consertava desktops o tempo todo. Aos 14 que me aprofundei em como as máquinas funcionam, aprendi python pelo youtube, fiz um chatbot de prompt pelo celular e desde então não parei mais. Fui para web, desde front-end a back-end com o ecossistema spring, mas por algum motivo achei muito superficial, eu não estava falando com a máquina, estava falando com quem falava com ela, com os tradutores (compiladores), então desci de Java para C e então para Assembly e consequentemente tive que estudar arquitetura de CPUs.
+O projeto está em evolução contínua e novos conjuntos de instruções e melhorias estruturais estão sendo adicionados progressivamente.
 
-Almejo ser um especialista em bare-metal e trabalhar em projetos que vão acelerar nosso avanço latente.
+Desafios técnicos
 
+Alguns dos pontos centrais durante o desenvolvimento:
+
+Representação consistente de estados da CPU e registradores
+Separação clara entre decode e execução de instruções
+Estruturação do código para permitir expansão do conjunto de instruções
+Garantia de comportamento previsível através de testes
+Sobre o autor
+
+Sou estudante de engenharia de computação e tenho interesse em sistemas de baixo nível, arquitetura de computadores e execução bare-metal.
+
+Meu foco atual é entender, na prática, como instruções são interpretadas e executadas, saindo de camadas mais abstratas e lidando diretamente com o funcionamento da máquina.
