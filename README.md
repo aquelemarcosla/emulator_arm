@@ -27,7 +27,8 @@ Representação consistente de estados da CPU e registradores
 Separação clara entre decode e execução de instruções
 Estruturação do código para permitir expansão do conjunto de instruções
 Garantia de comportamento previsível através de testes
-Sobre o autor
+
+## Sobre o autor
 
 Sou estudante de engenharia de computação e tenho interesse em sistemas de baixo nível, arquitetura de computadores e execução bare-metal.
 
