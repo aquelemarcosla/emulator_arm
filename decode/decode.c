@@ -12,7 +12,7 @@ instruction buildDPI(uint32_t data) {  // Data Processing - Immediate
     uint8_t subG = GET_BITS(data, 23, 0x3F);
 
     if ((subG & 0x22) == 0x22) {
-        
+        //continuar
     }
 }
 
