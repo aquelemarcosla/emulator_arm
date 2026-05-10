@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include "../../cpu/cpu.h"
 
-instruction BuildADDI(uint32_t data) {
-    
+instruction buildADDI(uint32_t data) {
+
 }
