@@ -29,6 +29,8 @@ add_executable(emulador_arm
         memory/memory.c
         decode/decode.c
         execute/execute.c
+        decode/dpi/BuildInstructionDPI.c
+        decode/dpi/BuildInstructionDPI.c
 )
 
 # Executável de teste

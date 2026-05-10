@@ -1,6 +1,7 @@
 #include "../cpu/cpu.h"
 #include "decode.h"
 #include <stdint.h>
+#include "dpi/*"
 
 /* Extrai bits de data aplicando deslocamento e máscara. */
 #define GET_BITS(data, shift, mask) (((data) >> (shift)) & (mask))
@@ -33,7 +34,6 @@ instruction buildDPI(uint32_t data) {
     /* Subgrupo ADDI / SUBI / CMP. */
     if ((op2 & 0x22) == 0x22) {
         if ((op3 & 0x3) == 0x0) {
-            return ADDI(uint32_t data);
         }
     }
 }

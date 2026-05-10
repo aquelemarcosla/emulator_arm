@@ -1,3 +1,6 @@
-//
-// Created by Lenovo on 10/05/2026.
-//
+#include <stdint.h>
+#include "../../cpu/cpu.h"
+
+instruction BuildADDI(uint32_t data) {
+    
+}
