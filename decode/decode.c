@@ -8,7 +8,6 @@
 
 /* Classifica o major group e delega para o decodificador correspondente. */
 instruction decode(uint32_t data) {
-    instruction inst;
 
     /* Isola os bits [28:25] para identificar o major group. */
     uint8_t op1 = GET_BITS(data, 25, 0xF);
@@ -33,8 +32,14 @@ instruction buildDPI(uint32_t data) {
 
     /* Subgrupo ADDI / SUBI / CMP. */
     if ((op2 & 0x22) == 0x22) {
-        if ((op3 & 0x3) == 0x0) { /* ADDI */
+        if ((op3 & 0x3) == 0x0) { /* ADDI [00] */
             return buildADDI(data);
+        }
+        else if ((op3 & 0x3) == 0x1) { /* SUBI [01] */
+            return buildSUBI(data);
+        }
+        else if ((op3 & 0x3) == 0x3) { /* CMP [11] */
+            return buildCMP(data);
         }
     }
 }

@@ -4,5 +4,10 @@
 #include "../../cpu/cpu.h"
 
 instruction buildADDI(uint32_t data) {}
+instruction buildSUBI(uint32_t data) {}
+instruction buildCMP(uint32_t data) {}
+instruction buildANDI(uint32_t data) {}
+instruction buildORRI(uint32_t data) {}
+instruction buildEORI(uint32_t data) {}
 
 #endif //EMULADOR_ARM_BUILDINSTRUCTIONDPI_H
