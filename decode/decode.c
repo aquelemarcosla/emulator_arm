@@ -8,7 +8,6 @@
 
 /* Classifica o major group e delega para o decodificador correspondente. */
 instruction decode(uint32_t data) {
-    instruction inst;
 
     /* Isola os bits [28:25] para identificar o major group. */
     uint8_t op1 = GET_BITS(data, 25, 0xF);
@@ -22,25 +21,29 @@ instruction decode(uint32_t data) {
     } else if ((op1 & 0x5) == 0x4) {  /* op1 == x1x0: Memory Access */
         return buildM(data);
     }
-
-    return inst;
 }
 
 /* Decodifica instruções do grupo Data Processing - Immediate. */
 instruction buildDPI(uint32_t data) {
 
-    /* Mascára para opocde [30:29]. */
+    /* Mascára para subgrupo [28:23] */
+    uint8_t op2 = GET_BITS(data, 23, 0x3F);
+
+    /* Mascára para opocde [30:29] do grupo aritmético. */
     uint8_t op3 = GET_BITS(data, 29, 0x3);
 
     /* Subgrupo ADDI / SUBI / CMP. */
-    switch (op3) {
-        case 0x0:  /* ADDI [00] */
-            return buildADDI(data);
-        case 0x1:  /* SUBI [01] */
-            return buildSUBI(data);
-        case 0x3:  /* CMP [11] */
-            return buildCMP(data);
+    if ((op2 & 0x22) == 0x22) {
+        switch (op3) {
+            case 0x0:  /* ADDI [00] */
+                return buildADDI(data);
+            case 0x1:  /* SUBI [01] */
+                return buildSUBI(data);
+            case 0x3:  /* CMP [11] */
+                return buildCMP(data);
+        }
     }
+
 }
 
 /* Decodifica instruções do grupo Data Processing - Register. */
