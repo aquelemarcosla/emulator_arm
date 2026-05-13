@@ -13,4 +13,8 @@ instruction buildANDI(uint32_t data) {}
 instruction buildORRI(uint32_t data) {}
 instruction buildEORI(uint32_t data) {}
 
+/* Transferencia. */
+instruction buildMOVZ(uint32_t data) {}
+instruction buildMOVN(uint32_t data) {}
+
 #endif //EMULADOR_ARM_BUILDINSTRUCTIONDPI_H
