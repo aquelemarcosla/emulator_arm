@@ -2,6 +2,7 @@
 #include "decode.h"
 #include <stdint.h>
 #include "dpi/BuildInstructionDPI.h"
+#include "dpr/BuildInstructionDPR.h"
 
 /* Extrai bits de data aplicando deslocamento e máscara. */
 #define GET_BITS(data, shift, mask) (((data) >> (shift)) & (mask))
@@ -88,8 +89,21 @@ instruction buildDPR(uint32_t data) {
     /* Máscara subgrupo [28:24] Aritmética e Lógica. */
     uint8_t opSubGp = GET_BITS(data, 24, 0x1F);
 
-    /* Máscara subgrupo[24:21] Deslocamento. */
+    /* Máscara subgrupo [24:21] Deslocamento. */
     uint8_t opSubGp2 = GET_BITS(data, 25, 0x3);
+
+    /* Máscara opcode aritmética [30] */
+    uint8_t opcode = GET_BITS(data, 30, 0x1);
+
+    /* Subgrupo Aritmético. */
+    if ((opSubGp & 0xC) == 0xC) {
+        switch (opcode) {
+            case 0x0:
+                return buildADD(data);
+            case 0x1:
+                return buildSUB(data);
+        }
+    }
 
     return inst;
 }
