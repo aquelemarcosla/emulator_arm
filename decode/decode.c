@@ -94,7 +94,7 @@ instruction buildDPR(uint32_t data) {
     uint8_t opSubGp = GET_BITS(data, 24, 0x1F);
 
     /* Máscara subgrupo [24:21] Deslocamento. */
-    uint8_t opSubGp2 = GET_BITS(data, 25, 0x3);
+    uint8_t opSubGp2 = GET_BITS(data, 21, 0xF);
 
     /* Máscara opcode aritmética [30] */
     uint8_t opcode = GET_BITS(data, 30, 0x1);
