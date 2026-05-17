@@ -50,6 +50,8 @@ instruction buildDPI(uint32_t data) {
                 return buildSUBI(data);
             case 0x2:  /* CMP [10] */
                 return buildCMP(data);
+            default:
+                return inst;
         }
     /* Subgrupo lógico  [100100] */
     } else if ((opSubGp & 0x24) == 0x24) {
@@ -60,6 +62,8 @@ instruction buildDPI(uint32_t data) {
                 return buildORRI(data);
             case 0x2:  /* EORI [10] */
                 return buildEORI(data);
+            default:
+                return inst;
         }
     /* Subgrupo transferencia [100101] */
     } else if ((opSubGp & 0x25) == 0x25) {
@@ -68,6 +72,8 @@ instruction buildDPI(uint32_t data) {
                 return buildMOVZ(data);
             case 0x1:  /* MOVN [01] */
                 return buildMOVN(data);
+            default:
+                return inst;
         }
     /* Subgrupo deslocamento [100110] */
     } else if ((opSubGp & 0x26) == 0x26) {
@@ -100,6 +106,8 @@ instruction buildDPR(uint32_t data) {
                 return buildADD(data);
             case 0x1:
                 return buildSUB(data);
+            default:
+                return inst;
         }
     }
 
