@@ -13,6 +13,14 @@ instruction decode(uint32_t data) {
     /* Caso indefinido */
     instruction inst = {0};
 
+    /* Máscara [31] Size-Flag(SF) */
+    uint8_t sf = GET_BITS(data, 31, 0x1);
+
+    /* Verificação do sf=1 */
+    if (sf == 0x0) {
+        return inst;
+    }
+
     /* Isola os bits [28:25] para identificar o major group. */
     uint8_t op1 = GET_BITS(data, 25, 0xF);
 
@@ -46,9 +54,9 @@ instruction buildDPI(uint32_t data) {
         switch (opcode) {
             case 0x0:  /* ADDI [00] */
                 return buildADDI(data);
-            case 0x1:  /* SUBI [01] */
+            case 0x2:  /* SUBI [10] */
                 return buildSUBI(data);
-            case 0x2:  /* CMP [10] */
+            case 0x3:  /* CMP [11] */
                 return buildCMP(data);
             default:
                 return inst;
@@ -68,9 +76,9 @@ instruction buildDPI(uint32_t data) {
     /* Subgrupo transferencia [100101] */
     } else if ((opSubGp & 0x25) == 0x25) {
         switch (opcode) {
-            case 0x0:  /* MOVZ [00] */
+            case 0x2:  /* MOVZ [10] */
                 return buildMOVZ(data);
-            case 0x1:  /* MOVN [01] */
+            case 0x0:  /* MOVN [00] */
                 return buildMOVN(data);
             default:
                 return inst;
@@ -96,12 +104,18 @@ instruction buildDPR(uint32_t data) {
     /* Máscara subgrupo [24:21] Deslocamento. */
     uint8_t opSubGp2 = GET_BITS(data, 21, 0xF);
 
-    /* Máscara opcode aritmética [30] */
-    uint8_t opcode = GET_BITS(data, 30, 0x1);
+    /* Máscara opcode Aritmética [30] */
+    uint8_t opAri = GET_BITS(data, 30, 0x1);
 
-    /* Subgrupo Aritmético. */
+    /* Máscara opcode Lógica [30:29] */
+    uint8_t opLog = GET_BITS(data, 29, 0x3);
+
+    /* Máscara opcode Deslocamento */
+    uint8_t opDes = GET_BITS(data, 10, 0x3F);
+
+    /* Subgrupo Aritmético [01011] */
     if ((opSubGp & 0xC) == 0xC) {
-        switch (opcode) {
+        switch (opAri) {
             case 0x0:
                 return buildADD(data);
             case 0x1:
@@ -109,6 +123,21 @@ instruction buildDPR(uint32_t data) {
             default:
                 return inst;
         }
+    /* Subgrupo Lógica [01010] */
+    } else if ((opSubGp & 0xA) == 0xA) {
+        switch (opLog) {
+            case 0x0:
+                return buildAND(data);
+            case 0x1:
+                return buildORR(data);
+            case 0x2:
+                return buildEOR(data);
+            default:
+                return inst;
+        }
+    /* Subgrupo Deslocamento [0110] */
+    } else if ((opSubGp2 & 0x6) == 0x6) {
+        if ((opDes &))
     }
 
     return inst;
