@@ -10,13 +10,13 @@
 /* Classifica o major group e delega para o decodificador correspondente. */
 instruction decode(uint32_t data) {
 
-    /* Caso indefinido */
+    /* Caso indefinido. */
     instruction inst = {0};
 
-    /* Máscara [31] Size-Flag(SF) */
+    /* Máscara [31] Size-Flag(SF). */
     uint8_t sf = GET_BITS(data, 31, 0x1);
 
-    /* Verificação do sf=1 */
+    /* Verificação do Size-Flag [31] se está setado em 1. */
     if (sf == 0x0) {
         return inst;
     }
@@ -137,7 +137,13 @@ instruction buildDPR(uint32_t data) {
         }
     /* Subgrupo Deslocamento [0110] */
     } else if ((opSubGp2 & 0x6) == 0x6) {
-        if ((opDes &))
+        if ((opDes & 0x8) == 0x8) {
+            return buildLSLV(data);
+        } else if ((opSubGp2 & 0x9) == 0x9) {
+            return buildLSRV(data);
+        }
+
+        return inst;
     }
 
     return inst;
