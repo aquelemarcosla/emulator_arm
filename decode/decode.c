@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include "dpi/BuildInstructionDPI.h"
 #include "dpr/BuildInstructionDPR.h"
+#include "m/buildInstructionM.h"
 
 /* Extrai bits de data aplicando deslocamento e máscara. */
 #define GET_BITS(data, shift, mask) (((data) >> (shift)) & (mask))
@@ -116,9 +117,9 @@ instruction buildDPR(uint32_t data) {
     /* Subgrupo Aritmético [01011] */
     if ((opSubGp & 0xC) == 0xC) {
         switch (opAri) {
-            case 0x0:
+            case 0x0: /* ADD [0] */
                 return buildADD(data);
-            case 0x1:
+            case 0x1: /* SUB [1] */
                 return buildSUB(data);
             default:
                 return inst;
@@ -126,20 +127,20 @@ instruction buildDPR(uint32_t data) {
     /* Subgrupo Lógica [01010] */
     } else if ((opSubGp & 0xA) == 0xA) {
         switch (opLog) {
-            case 0x0:
+            case 0x0: /* AND [00] */
                 return buildAND(data);
-            case 0x1:
+            case 0x1: /* ORR [01] */
                 return buildORR(data);
-            case 0x2:
+            case 0x2: /* EOR [10] */
                 return buildEOR(data);
             default:
                 return inst;
         }
     /* Subgrupo Deslocamento [0110] */
     } else if ((opSubGp2 & 0x6) == 0x6) {
-        if ((opDes & 0x8) == 0x8) {
+        if ((opDes & 0x8) == 0x8) { /* LSLV [001000] */
             return buildLSLV(data);
-        } else if ((opSubGp2 & 0x9) == 0x9) {
+        } else if ((opSubGp2 & 0x9) == 0x9) {  /* LSRV [001001] */
             return buildLSRV(data);
         }
 
@@ -149,12 +150,27 @@ instruction buildDPR(uint32_t data) {
     return inst;
 }
 
-/* Decodifica instruções do grupo Branches. */
-instruction buildB(uint32_t data) {
-
-}
-
 /* Decodifica instruções do grupo Memory Access. */
 instruction buildM(uint32_t data) {
+    instruction inst = {0};
+
+    uint8_t opSubGp = GET_BITS(data, 24, 0x3F);
+
+    uint8_t opcode = GET_BITS(data, 22, 0x3);
+
+    if ((opSubGp & 0x39) == 0x39) {
+        switch (opcode) {
+            case 0x0:
+                return buildSTR(data);
+            case 0x1:
+                return buildLDR(data);
+        }
+    }
+
+    return inst;
+}
+
+/* Decodifica instruções do grupo Branches. */
+instruction buildB(uint32_t data) {
 
 }
