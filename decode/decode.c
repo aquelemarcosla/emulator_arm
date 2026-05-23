@@ -1,9 +1,10 @@
 #include "../cpu/cpu.h"
 #include "decode.h"
 #include <stdint.h>
-#include "dpi/BuildInstructionDPI.h"
-#include "dpr/BuildInstructionDPR.h"
+#include "dpi/buildInstructionDPI.h"
+#include "dpr/buildInstructionDPR.h"
 #include "m/buildInstructionM.h"
+#include "b/buildInstructionB.h"
 
 /* Extrai bits de data aplicando deslocamento e máscara. */
 #define GET_BITS(data, shift, mask) (((data) >> (shift)) & (mask))
@@ -13,14 +14,6 @@ instruction decode(uint32_t data) {
 
     /* Caso indefinido. */
     instruction inst = {0};
-
-    /* Máscara [31] Size-Flag(SF). */
-    uint8_t sf = GET_BITS(data, 31, 0x1);
-
-    /* Verificação do Size-Flag [31] se está setado em 1. */
-    if (sf == 0x0) {
-        return inst;
-    }
 
     /* Isola os bits [28:25] para identificar o major group. */
     uint8_t op1 = GET_BITS(data, 25, 0xF);
@@ -154,16 +147,20 @@ instruction buildDPR(uint32_t data) {
 instruction buildM(uint32_t data) {
     instruction inst = {0};
 
+    /* Máscara de subgrupo de acesso a memória [29:24] */
     uint8_t opSubGp = GET_BITS(data, 24, 0x3F);
 
+    /* Máscara de opcode [23:22] */
     uint8_t opcode = GET_BITS(data, 22, 0x3);
 
     if ((opSubGp & 0x39) == 0x39) {
         switch (opcode) {
-            case 0x0:
+            case 0x0: /* STR [00] */
                 return buildSTR(data);
-            case 0x1:
+            case 0x1: /* LDR [01] */
                 return buildLDR(data);
+            default:
+                return inst;
         }
     }
 
@@ -173,4 +170,24 @@ instruction buildM(uint32_t data) {
 /* Decodifica instruções do grupo Branches. */
 instruction buildB(uint32_t data) {
 
+    instruction inst = {0};
+
+    /* Máscara subgrupo [30:26] */
+    uint8_t opSubGp = GET_BITS(data, 26, 0x1F);
+
+    /* Máscara opcode [31] */
+    uint8_t opcode = GET_BITS(data, 31, 0x1);
+
+    if ((opSubGp & 0x5) == 0x5) {
+        switch (opcode) {
+            case 0x0:
+                return buildB(data);
+            case 0x1:
+                return buildBL(data);
+            default:
+                return inst;
+        }
+    }
+
+    return inst;
 }
