@@ -39,6 +39,7 @@ add_executable(emulador_arm
         decode/b/buildInstructionB.h
         decode/b/buildInstructionB.h
         decode/dpi/buildInstructionDPI.c
+        encode/encode.h
 )
 
 # Executável de teste
