@@ -1,6 +1,6 @@
 #include "opcode_table.h"
-#include "stdint.h"
-#include "../builders/dpi_a/builderDPI_A.h"
+#include <stdint.h>
+#include "../builders/builders.h"
 
 OpcodeTable opcode_table[] = {
     {"ADDI", 0x244, &builderADDI},
