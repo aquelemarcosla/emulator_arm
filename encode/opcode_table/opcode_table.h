@@ -4,7 +4,8 @@
 
 typedef struct {
     char *mnemonic;
-    uint16_t opcode;
+    uint16_t value;
+    uint32_t (*builder)(char *, char **); // (buffer, saveptr)
 } OpcodeTable;
 
 extern OpcodeTable opcode_table[];
