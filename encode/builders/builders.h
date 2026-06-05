@@ -4,5 +4,6 @@
 // Incluí todos os builders.
 #include "builderDPI/dpi_Arithmetic/builderDPI_A.h"
 #include "builderDPI/dpi_Logic/builderDPI_L.h"
+#include "builderDPI/dpi_Access/builderDPI_ASS.h"
 
 #endif

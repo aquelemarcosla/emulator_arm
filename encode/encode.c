@@ -28,7 +28,7 @@ uint32_t encode(const char *instruction) {
 
     for (int i = 0; i < opcode_table_size; i++) {
         if (strcmp(token, opcode_table[i].mnemonic) == 0) {
-            return mnemonic = opcode_table[i].mnemonic;
+            mnemonic = opcode_table[i].mnemonic;
         }
     }
 

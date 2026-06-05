@@ -1,0 +1,16 @@
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/unity_lib.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/tests.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/list_install_components.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/install.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/install/local.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/install/strip.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/unity.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/rebuild_cache.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/list_install_components.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/install.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/install/local.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/install/strip.dir

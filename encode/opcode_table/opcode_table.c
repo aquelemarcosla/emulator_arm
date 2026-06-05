@@ -3,9 +3,15 @@
 #include "../builders/builders.h"
 
 OpcodeTable opcode_table[] = {
+    // DPI
     {"ADDI", 0x244, &builderADDI},
     {"SUBI", 0x344, &builderSUBI},
     {"CMPI", 0x3C4, &builderCMPI},
+    {"ANDI", 0x124, &builderANDI},
+    {"ORRI", 0x164, &builderORRI},
+    {"EORI", 0x1A4, &builderEORI},
+    {"MOVZ", 0x694, &builderMOVZ},
+    {"MOVN", 0x494, &builderMOVN},
 };
 
 const int opcode_table_size = sizeof(opcode_table) / sizeof(OpcodeTable);

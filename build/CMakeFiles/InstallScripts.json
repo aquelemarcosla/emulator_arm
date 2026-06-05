@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/cmake_install.cmake",
+		"C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

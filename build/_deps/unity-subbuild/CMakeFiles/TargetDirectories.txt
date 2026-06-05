@@ -1,0 +1,3 @@
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-subbuild/CMakeFiles/unity-populate.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-subbuild/CMakeFiles/rebuild_cache.dir

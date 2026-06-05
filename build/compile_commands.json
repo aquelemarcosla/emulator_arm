@@ -1,0 +1,80 @@
+[
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -g -std=gnu11 -o CMakeFiles\\unity_lib.dir\\_deps\\unity-src\\src\\unity.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\build\\_deps\\unity-src\\src\\unity.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src/unity.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/unity_lib.dir/_deps/unity-src/src/unity.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\main.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\main.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/main.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/main.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\cpu\\cpu.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\cpu\\cpu.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/cpu/cpu.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/cpu/cpu.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\memory\\memory.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\memory\\memory.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/memory/memory.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/memory/memory.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\decode\\decode.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\decode\\decode.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/decode.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/decode/decode.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\execute\\execute.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\execute\\execute.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/execute/execute.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/execute/execute.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\decode\\dpi\\buildInstructionDPI.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\decode\\dpi\\buildInstructionDPI.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/dpi/buildInstructionDPI.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -g -std=gnu11 -o CMakeFiles\\tests.dir\\tests\\test_cpu.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\tests\\test_cpu.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/tests/test_cpu.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/tests.dir/tests/test_cpu.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -g -std=gnu11 -o CMakeFiles\\tests.dir\\cpu\\cpu.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\cpu\\cpu.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/cpu/cpu.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/tests.dir/cpu/cpu.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -g -std=gnu11 -o CMakeFiles\\tests.dir\\memory\\memory.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\memory\\memory.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/memory/memory.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/tests.dir/memory/memory.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -g -std=gnu11 -o CMakeFiles\\tests.dir\\decode\\decode.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\decode\\decode.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/decode.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/tests.dir/decode/decode.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -g -std=gnu11 -o CMakeFiles\\tests.dir\\execute\\execute.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\execute\\execute.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/execute/execute.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/tests.dir/execute/execute.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build -g -std=c11 -Waddress -Waggregate-return -Wformat-nonliteral -Wformat-security -Wformat -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wno-multichar -Wno-parentheses -Wno-type-limits -Wno-unused-parameter -Wunreachable-code -Wwrite-strings -Wpointer-arith -Werror -Wall -o _deps\\unity-build\\CMakeFiles\\unity.dir\\src\\unity.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\build\\_deps\\unity-src\\src\\unity.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src/unity.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/CMakeFiles/unity.dir/src/unity.c.obj"
+}
+]
