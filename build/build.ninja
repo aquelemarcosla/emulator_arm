@@ -56,6 +56,8 @@ build CMakeFiles/unity_lib.dir/_deps/unity-src/src/unity.c.obj: C_COMPILER__unit
   INCLUDES = -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src
   OBJECT_DIR = CMakeFiles\unity_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\unity_lib.dir\_deps\unity-src\src
+  TARGET_COMPILE_PDB = CMakeFiles\unity_lib.dir\unity_lib.pdb
+  TARGET_PDB = libunity_lib.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\unity_lib.dir
 
 
@@ -72,8 +74,9 @@ build libunity_lib.a: C_STATIC_LIBRARY_LINKER__unity_lib_Debug CMakeFiles/unity_
   OBJECT_DIR = CMakeFiles\unity_lib.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\unity_lib.dir\unity_lib.pdb
   TARGET_FILE = libunity_lib.a
-  TARGET_PDB = unity_lib.a.dbg
+  TARGET_PDB = libunity_lib.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\unity_lib.dir
 
 # =============================================================================
@@ -91,6 +94,8 @@ build CMakeFiles/emulador_arm.dir/main.c.obj: C_COMPILER__emulador_arm_unscanned
   FLAGS = -g -std=gnu11
   OBJECT_DIR = CMakeFiles\emulador_arm.dir
   OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
 
 build CMakeFiles/emulador_arm.dir/cpu/cpu.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/cpu/cpu.c || cmake_object_order_depends_target_emulador_arm
@@ -99,6 +104,8 @@ build CMakeFiles/emulador_arm.dir/cpu/cpu.c.obj: C_COMPILER__emulador_arm_unscan
   FLAGS = -g -std=gnu11
   OBJECT_DIR = CMakeFiles\emulador_arm.dir
   OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\cpu
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
 
 build CMakeFiles/emulador_arm.dir/memory/memory.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/memory/memory.c || cmake_object_order_depends_target_emulador_arm
@@ -107,6 +114,8 @@ build CMakeFiles/emulador_arm.dir/memory/memory.c.obj: C_COMPILER__emulador_arm_
   FLAGS = -g -std=gnu11
   OBJECT_DIR = CMakeFiles\emulador_arm.dir
   OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\memory
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
 
 build CMakeFiles/emulador_arm.dir/decode/decode.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/decode.c || cmake_object_order_depends_target_emulador_arm
@@ -115,14 +124,8 @@ build CMakeFiles/emulador_arm.dir/decode/decode.c.obj: C_COMPILER__emulador_arm_
   FLAGS = -g -std=gnu11
   OBJECT_DIR = CMakeFiles\emulador_arm.dir
   OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\decode
-  TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
-
-build CMakeFiles/emulador_arm.dir/execute/execute.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/execute/execute.c || cmake_object_order_depends_target_emulador_arm
-  CONFIG = Debug
-  DEP_FILE = CMakeFiles\emulador_arm.dir\execute\execute.c.obj.d
-  FLAGS = -g -std=gnu11
-  OBJECT_DIR = CMakeFiles\emulador_arm.dir
-  OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\execute
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
 
 build CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/dpi/buildInstructionDPI.c || cmake_object_order_depends_target_emulador_arm
@@ -131,6 +134,38 @@ build CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj: C_COMPIL
   FLAGS = -g -std=gnu11
   OBJECT_DIR = CMakeFiles\emulador_arm.dir
   OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\decode\dpi
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
+
+build CMakeFiles/emulador_arm.dir/execute/execute.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/execute/execute.c || cmake_object_order_depends_target_emulador_arm
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\emulador_arm.dir\execute\execute.c.obj.d
+  FLAGS = -g -std=gnu11
+  OBJECT_DIR = CMakeFiles\emulador_arm.dir
+  OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\execute
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
+
+build CMakeFiles/emulador_arm.dir/encode/encode.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/encode/encode.c || cmake_object_order_depends_target_emulador_arm
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\emulador_arm.dir\encode\encode.c.obj.d
+  FLAGS = -g -std=gnu11
+  OBJECT_DIR = CMakeFiles\emulador_arm.dir
+  OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\encode
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
+  TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
+
+build CMakeFiles/emulador_arm.dir/encode/opcode_table/opcode_table.c.obj: C_COMPILER__emulador_arm_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/encode/opcode_table/opcode_table.c || cmake_object_order_depends_target_emulador_arm
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\emulador_arm.dir\encode\opcode_table\opcode_table.c.obj.d
+  FLAGS = -g -std=gnu11
+  OBJECT_DIR = CMakeFiles\emulador_arm.dir
+  OBJECT_FILE_DIR = CMakeFiles\emulador_arm.dir\encode\opcode_table
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
+  TARGET_PDB = emulador_arm.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
 
 
@@ -141,16 +176,17 @@ build CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj: C_COMPIL
 #############################################
 # Link the executable emulador_arm.exe
 
-build emulador_arm.exe: C_EXECUTABLE_LINKER__emulador_arm_Debug CMakeFiles/emulador_arm.dir/main.c.obj CMakeFiles/emulador_arm.dir/cpu/cpu.c.obj CMakeFiles/emulador_arm.dir/memory/memory.c.obj CMakeFiles/emulador_arm.dir/decode/decode.c.obj CMakeFiles/emulador_arm.dir/execute/execute.c.obj CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj
+build emulador_arm.exe: C_EXECUTABLE_LINKER__emulador_arm_Debug CMakeFiles/emulador_arm.dir/main.c.obj CMakeFiles/emulador_arm.dir/cpu/cpu.c.obj CMakeFiles/emulador_arm.dir/memory/memory.c.obj CMakeFiles/emulador_arm.dir/decode/decode.c.obj CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj CMakeFiles/emulador_arm.dir/execute/execute.c.obj CMakeFiles/emulador_arm.dir/encode/encode.c.obj CMakeFiles/emulador_arm.dir/encode/opcode_table/opcode_table.c.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\emulador_arm.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\emulador_arm.dir\
   TARGET_FILE = emulador_arm.exe
   TARGET_IMPLIB = libemulador_arm.dll.a
-  TARGET_PDB = emulador_arm.exe.dbg
+  TARGET_PDB = emulador_arm.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\emulador_arm.dir
 
 # =============================================================================
@@ -169,6 +205,8 @@ build CMakeFiles/tests.dir/tests/test_cpu.c.obj: C_COMPILER__tests_unscanned_Deb
   INCLUDES = -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src
   OBJECT_DIR = CMakeFiles\tests.dir
   OBJECT_FILE_DIR = CMakeFiles\tests.dir\tests
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
+  TARGET_PDB = tests.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\tests.dir
 
 build CMakeFiles/tests.dir/cpu/cpu.c.obj: C_COMPILER__tests_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/cpu/cpu.c || cmake_object_order_depends_target_tests
@@ -178,6 +216,8 @@ build CMakeFiles/tests.dir/cpu/cpu.c.obj: C_COMPILER__tests_unscanned_Debug C$:/
   INCLUDES = -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src
   OBJECT_DIR = CMakeFiles\tests.dir
   OBJECT_FILE_DIR = CMakeFiles\tests.dir\cpu
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
+  TARGET_PDB = tests.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\tests.dir
 
 build CMakeFiles/tests.dir/memory/memory.c.obj: C_COMPILER__tests_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/memory/memory.c || cmake_object_order_depends_target_tests
@@ -187,6 +227,8 @@ build CMakeFiles/tests.dir/memory/memory.c.obj: C_COMPILER__tests_unscanned_Debu
   INCLUDES = -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src
   OBJECT_DIR = CMakeFiles\tests.dir
   OBJECT_FILE_DIR = CMakeFiles\tests.dir\memory
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
+  TARGET_PDB = tests.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\tests.dir
 
 build CMakeFiles/tests.dir/decode/decode.c.obj: C_COMPILER__tests_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/decode.c || cmake_object_order_depends_target_tests
@@ -196,6 +238,8 @@ build CMakeFiles/tests.dir/decode/decode.c.obj: C_COMPILER__tests_unscanned_Debu
   INCLUDES = -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src
   OBJECT_DIR = CMakeFiles\tests.dir
   OBJECT_FILE_DIR = CMakeFiles\tests.dir\decode
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
+  TARGET_PDB = tests.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\tests.dir
 
 build CMakeFiles/tests.dir/execute/execute.c.obj: C_COMPILER__tests_unscanned_Debug C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/execute/execute.c || cmake_object_order_depends_target_tests
@@ -205,6 +249,8 @@ build CMakeFiles/tests.dir/execute/execute.c.obj: C_COMPILER__tests_unscanned_De
   INCLUDES = -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src
   OBJECT_DIR = CMakeFiles\tests.dir
   OBJECT_FILE_DIR = CMakeFiles\tests.dir\execute
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
+  TARGET_PDB = tests.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\tests.dir
 
 
@@ -222,9 +268,10 @@ build tests.exe: C_EXECUTABLE_LINKER__tests_Debug CMakeFiles/tests.dir/tests/tes
   OBJECT_DIR = CMakeFiles\tests.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
   TARGET_FILE = tests.exe
   TARGET_IMPLIB = libtests.dll.a
-  TARGET_PDB = tests.exe.dbg
+  TARGET_PDB = tests.pdb
   TARGET_SUPPORT_DIR = CMakeFiles\tests.dir
 
 
@@ -314,6 +361,8 @@ build _deps/unity-build/CMakeFiles/unity.dir/src/unity.c.obj: C_COMPILER__unity_
   INCLUDES = -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-src/src -IC:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build
   OBJECT_DIR = _deps\unity-build\CMakeFiles\unity.dir
   OBJECT_FILE_DIR = _deps\unity-build\CMakeFiles\unity.dir\src
+  TARGET_COMPILE_PDB = _deps\unity-build\CMakeFiles\unity.dir\unity.pdb
+  TARGET_PDB = _deps\unity-build\libunity.pdb
   TARGET_SUPPORT_DIR = _deps\unity-build\CMakeFiles\unity.dir
 
 
@@ -330,8 +379,9 @@ build _deps/unity-build/libunity.a: C_STATIC_LIBRARY_LINKER__unity_Debug _deps/u
   OBJECT_DIR = _deps\unity-build\CMakeFiles\unity.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = _deps\unity-build\CMakeFiles\unity.dir\unity.pdb
   TARGET_FILE = _deps\unity-build\libunity.a
-  TARGET_PDB = unity.a.dbg
+  TARGET_PDB = _deps\unity-build\libunity.pdb
   TARGET_SUPPORT_DIR = _deps\unity-build\CMakeFiles\unity.dir
 
 
@@ -437,14 +487,14 @@ build _deps/unity-build/all: phony _deps/unity-build/libunity.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/cmake_install.cmake C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-4.3/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/CMakeLists.txt CMakeCache.txt CMakeFiles/4.3.2/CMakeCCompiler.cmake CMakeFiles/4.3.2/CMakeRCCompiler.cmake CMakeFiles/4.3.2/CMakeSystem.cmake _deps/unity-src/CMakeLists.txt
+build build.ninja C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/cmake_install.cmake C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/_deps/unity-build/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-4.3/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCCompilerABI.c C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerSupport.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeNinjaFindMake.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystem.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Diab-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Renesas-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeInspectCLinker.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/CMakeLists.txt CMakeCache.txt CMakeFiles/4.3.2/CMakeCCompiler.cmake CMakeFiles/4.3.2/CMakeRCCompiler.cmake CMakeFiles/4.3.2/CMakeSystem.cmake _deps/unity-src/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/CMake/share/cmake-4.3/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/CMakeLists.txt CMakeCache.txt CMakeFiles/4.3.2/CMakeCCompiler.cmake CMakeFiles/4.3.2/CMakeRCCompiler.cmake CMakeFiles/4.3.2/CMakeSystem.cmake _deps/unity-src/CMakeLists.txt: phony
+build C$:/Program$ Files/CMake/share/cmake-4.3/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCCompilerABI.c C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeCompilerIdDetection.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineCompilerSupport.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeNinjaFindMake.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeParseImplicitIncludeInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeParseImplicitLinkInfo.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeParseLibraryArchitecture.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCCompiler.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystem.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeTestCompilerCommon.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/CMakeTestRCCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/ADSP-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/ARMCC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/ARMClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/AppleClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Borland-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Bruce-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Clang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Clang-DetermineCompilerInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Compaq-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Cray-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/CrayClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Diab-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Embarcadero-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Fujitsu-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GHS-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/HP-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IAR-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Intel-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/LCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/MSVC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/NVHPC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/NVIDIA-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/OrangeC-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/PGI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/PathScale-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Renesas-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/SCO-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/SDCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/SunPro-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/TI-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/TIClang-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Tasking-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/Watcom-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/XL-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/XLClang-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Compiler/zOS-C-DetermineCompiler.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/ExternalProject/shared_internal_commands.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FetchContent/CMakeLists.cmake.in C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindGit.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/CMakeInspectCLinker.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Internal/FeatureTesting.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake C$:/Users/Lenovo/OneDrive/Documents/emulador_arm/CMakeLists.txt CMakeCache.txt CMakeFiles/4.3.2/CMakeCCompiler.cmake CMakeFiles/4.3.2/CMakeRCCompiler.cmake CMakeFiles/4.3.2/CMakeSystem.cmake _deps/unity-src/CMakeLists.txt: phony
 
 
 #############################################

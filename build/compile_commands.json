@@ -31,15 +31,27 @@
 },
 {
   "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\decode\\dpi\\buildInstructionDPI.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\decode\\dpi\\buildInstructionDPI.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/dpi/buildInstructionDPI.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
   "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\execute\\execute.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\execute\\execute.c",
   "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/execute/execute.c",
   "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/execute/execute.c.obj"
 },
 {
   "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
-  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\decode\\dpi\\buildInstructionDPI.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\decode\\dpi\\buildInstructionDPI.c",
-  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/decode/dpi/buildInstructionDPI.c",
-  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/decode/dpi/buildInstructionDPI.c.obj"
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\encode\\encode.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\encode\\encode.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/encode/encode.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/encode/encode.c.obj"
+},
+{
+  "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -g -std=gnu11 -o CMakeFiles\\emulador_arm.dir\\encode\\opcode_table\\opcode_table.c.obj -c C:\\Users\\Lenovo\\OneDrive\\Documents\\emulador_arm\\encode\\opcode_table\\opcode_table.c",
+  "file": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/encode/opcode_table/opcode_table.c",
+  "output": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build/CMakeFiles/emulador_arm.dir/encode/opcode_table/opcode_table.c.obj"
 },
 {
   "directory": "C:/Users/Lenovo/OneDrive/Documents/emulador_arm/build",

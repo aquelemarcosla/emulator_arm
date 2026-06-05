@@ -20,8 +20,13 @@ Este projeto implementa um emulador funcional da arquitetura ARM 64-bit, permiti
 │   ├── dpr/         # Instruções Data Processing Register
 │   ├── m/           # Instruções Load/Store Memory
 │   └── b/           # Instruções Branch
-├── execute/          # Execução de instruções
 ├── encode/           # Codificação de instruções
+│   └── builders/
+│       └── builderDPI/
+│           ├── dpi_Arithmetic/  # ADDI, SUBI, CMPI
+│           ├── dpi_Logic/       # ANDI, ORRI, EORI
+│           └── dpi_Move/        # MOVZ, MOVN (instruções de movimento)
+├── execute/          # Execução de instruções
 ├── tests/            # Suite de testes (Unity framework)
 └── main.c            # Ponto de entrada
 ```

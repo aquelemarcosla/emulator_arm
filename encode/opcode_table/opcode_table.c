@@ -12,6 +12,8 @@ OpcodeTable opcode_table[] = {
     {"EORI", 0x1A4, &builderEORI},
     {"MOVZ", 0x694, &builderMOVZ},
     {"MOVN", 0x494, &builderMOVN},
+    {"LSL", 0x34D, &builderUBFM},
+    {"LSR", 0x34D, &builderUBFM}
 };
 
 const int opcode_table_size = sizeof(opcode_table) / sizeof(OpcodeTable);
