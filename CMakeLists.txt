@@ -32,6 +32,8 @@ add_executable(emulador_arm
         execute/execute.c
         encode/encode.c
         encode/opcode_table/opcode_table.c
+        encode/builders/registers_table/registers_table.h
+        encode/builders/registers_table/registers_table.c
         # header files are included from sources when needed; remove missing headers
 )
 
