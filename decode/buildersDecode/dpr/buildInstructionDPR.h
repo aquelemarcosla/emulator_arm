@@ -1,7 +1,7 @@
-#ifndef EMULADOR_ARM_BUILDINSTRUCTIONDPR_H
-#define EMULADOR_ARM_BUILDINSTRUCTIONDPR_H
+#ifndef BUILDINSTRUCTIONDPR_H
+#define BUILDINSTRUCTIONDPR_H
 #include <stdint.h>
-#include "../../cpu/cpu.h"
+#include "../../../cpu/cpu.h"
 
 /* Aritmética. */
 instruction buildADD(uint32_t data);
@@ -16,4 +16,4 @@ instruction buildEOR(uint32_t data);
 instruction buildLSRV(uint32_t data);
 instruction buildLSLV(uint32_t data);
 
-#endif //EMULADOR_ARM_BUILDINSTRUCTIONDPR_H
+#endif //BUILDINSTRUCTIONDPR_H

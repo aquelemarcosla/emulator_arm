@@ -1,7 +1,7 @@
 #include "../cpu/cpu.h"
 #include "decode.h"
 #include <stdint.h>
-#include "buildersDecode.h"
+#include "buildersDecode/buildersDecode.h"
 
 /* Extrai bits de data aplicando deslocamento e máscara. */
 #define GET_BITS(data, shift, mask) (((data) >> (shift)) & (mask))

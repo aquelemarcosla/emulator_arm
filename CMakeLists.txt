@@ -28,13 +28,12 @@ add_executable(emulador_arm
         cpu/cpu.c
         memory/memory.c
         decode/decode.c
-        decode/dpi/buildInstructionDPI.c
         execute/execute.c
         encode/encode.c
         encode/opcode_table/opcode_table.c
         encode/registers_table/registers_table.c
         encode/builders/builders.h
-        decode/buildersDecode.h
+        decode/buildersDecode/buildersDecode.h
 )
 
 # Executável de teste
