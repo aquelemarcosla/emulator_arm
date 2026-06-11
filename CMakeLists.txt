@@ -31,10 +31,12 @@ add_executable(emulador_arm
         execute/execute.c
         encode/encode.c
         encode/opcode_table/opcode_table.c
-        encode/registers_table/registers_table.c
+        cpu/registers_table/registers_table.c
+        cpu/labels_table/labels_table.c
         encode/builders/builders.h
         decode/buildersDecode/buildersDecode.h
         reader/reader.h
+        cpu/labels_table/labels_table.h
 )
 
 # Executável de teste

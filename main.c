@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include "cpu/cpu.h"
 
 int main(void) {
-    printf("Hello, World!\n");
-    return 0;
+    // Init CPU.
+    CPU cpu = {0};
+
 }

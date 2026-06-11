@@ -1,6 +1,5 @@
 #include "registers_table.h"
 #include <stdint.h>
-#include "../builders/builders.h"
 
 RegistersTable registers_table[] = {
     {"X0",  0x0},
