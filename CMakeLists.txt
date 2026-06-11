@@ -34,6 +34,7 @@ add_executable(emulador_arm
         encode/registers_table/registers_table.c
         encode/builders/builders.h
         decode/buildersDecode/buildersDecode.h
+        reader/reader.h
 )
 
 # Executável de teste

@@ -5,6 +5,8 @@
 uint32_t encode(const char *instruction) {
     if (instruction == NULL){
         return 0;
+    } else if (strlen(instruction) == 0){
+        return 0;
     }
 
     uint32_t instruction_decode = 0;   
@@ -12,23 +14,20 @@ uint32_t encode(const char *instruction) {
     char *saveptr;
     const char *delimitadores = " ,";
 
-    char buffer[128];
+    char buffer[65];
 
     // instruction para buffer.
-    // Null no final.
+    // null no final.
     strncpy(buffer, instruction, sizeof(buffer) - 1);
     buffer[sizeof(buffer) - 1] = '\0';
 
     // token para o opcode inicial.
     char *token = strtok_r(buffer, delimitadores, &saveptr);
 
-    // Mnemonico e valor inicial.
-    char *mnemonic;
-    char *value;
-
+    // Percorre e executa builder.
     for (int i = 0; i < opcode_table_size; i++) {
         if (strcmp(token, opcode_table[i].mnemonic) == 0) {
-            mnemonic = opcode_table[i].mnemonic;
+            return opcode_table[i].builder(buffer, &saveptr);
         }
     }
 
