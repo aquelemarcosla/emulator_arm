@@ -22,6 +22,15 @@ OpcodeTable opcode_table[] = {
     {"EOR", 0x650, &builderEOR},
     {"LSLV", 0x4D6, &builderLSLV},
     {"LSRV", 0x4D6, &builderLSRV},
+    // Memory Access
+    {"LDR", 0x1F5, &builderLDR},
+    {"STR", 0x1F4, &builderSTR},
+    // Branch & System
+    {"B", 0x5, &builderB},
+    {"BL", 0x25, &builderBL},
+    {"RET", 0xD6BE03C0, &builderRET},
+    {"BEQ", 0x54, &builderBEQ},
+    {"BNE", 0x54, &builderBNE},
 };
 
 const int opcode_table_size = sizeof(opcode_table) / sizeof(OpcodeTable);
