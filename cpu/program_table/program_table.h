@@ -5,7 +5,7 @@
 typedef struct {
     uint32_t instruction;
     uint64_t program_counter;
-} Instruction;
+} ProgramTableEntry;
 
 void addInstruction(uint32_t instruction);
 uint32_t getInstruction(uint64_t pc);

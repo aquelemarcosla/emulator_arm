@@ -2,8 +2,6 @@
 #define BUILDERB_H
 #include "stdint.h"
 
-uint32_t instruction;
-
 uint32_t builderB(uint32_t value, char **saveptr);
 uint32_t builderBL(uint32_t value, char **saveptr);
 uint32_t builderRET(uint32_t value, char **saveptr);

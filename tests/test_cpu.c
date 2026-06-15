@@ -54,6 +54,7 @@ void test_nzcv(void) {
 
 int main(void) {
     UNITY_BEGIN();
+    RUN_TEST(test_encode_branch);
     RUN_TEST(test_reg_read_and_write);
     RUN_TEST(test_nzcv);
     return UNITY_END();

@@ -1,7 +1,7 @@
 #ifndef BUILDINSTRUCTIONDPI_H
 #define BUILDINSTRUCTIONDPI_H
 #include <stdint.h>
-#include "../../../cpu/cpu.h"
+#include "cpu/cpu.h"
 
 /* Aritmética. */
 instruction buildADDI(uint32_t data);

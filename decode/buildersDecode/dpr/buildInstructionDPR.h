@@ -1,7 +1,7 @@
 #ifndef BUILDINSTRUCTIONDPR_H
 #define BUILDINSTRUCTIONDPR_H
 #include <stdint.h>
-#include "cpu.h"
+#include "cpu/cpu.h"
 
 /* Aritmética. */
 instruction buildADD(uint32_t data);

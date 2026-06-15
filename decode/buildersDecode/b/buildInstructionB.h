@@ -1,7 +1,7 @@
 #ifndef BUILDINSTRUCTIONB_H
 #define BUILDINSTRUCTIONB_H
-#include "cpu.h"
 #include "stdint.h"
+#include "cpu/cpu.h"
 
 /* Branches (Desvios) */
 instruction buildBranch(uint32_t data);

@@ -12,7 +12,7 @@ void addLabel(const char *name, uint64_t address) {
         if (labels_table[i].name[0] == '\0') { //verifica vazio.
             strncpy(labels_table[i].name, name, sizeof(labels_table[i].name) - 1);
             labels_table[i].name[sizeof(labels_table[i].name) - 1] = '\0'; //null final.
-            labels_table[i].address = address;
+            labels_table[i].address = address;  
             return;
         } 
     }

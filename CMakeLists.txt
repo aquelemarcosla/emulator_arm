@@ -33,13 +33,28 @@ add_executable(emulador_arm
         encode/opcode_table/opcode_table.c
         cpu/registers_table/registers_table.c
         cpu/labels_table/labels_table.c
-        encode/builders/builders.h
-        decode/buildersDecode/buildersDecode.h
-        reader/reader.h
-        cpu/labels_table/labels_table.h
+
+        # Decode builders
+        decode/buildersDecode/b/buildInstructionB.c
+        decode/buildersDecode/dpi/buildInstructionDPI.c
+        decode/buildersDecode/dpr/buildInstructionDPR.c
+        decode/buildersDecode/m/buildInstructionM.c
+
+        # Encode builders
+        encode/builders/builderB/b_Branch/builderB.c
+        encode/builders/builderDPI/dpi_Arithmetic/builderDPI_A.c
+        encode/builders/builderDPI/dpi_Logic/builderDPI_L.c
+        encode/builders/builderDPI/dpi_Move/builderDPI_MOV.c
+        encode/builders/builderDPI/dpi_Shift/builderDPI_Shift.c
+        encode/builders/builderDPR/dpi_Shift/builderDPR_Shift.c
+        encode/builders/builderDPR/dpr_Arithmetic/builderDPR_A.c
+        encode/builders/builderDPR/dpr_Logic/builderDPR_L.c
+        encode/builders/builderM/m_Access/builderM.c
         cpu/program_table/program_table.h
-        cpu/cpu.c
-        cpu/cpu.h
+)
+
+target_include_directories(emulador_arm PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 # Executável de teste
@@ -49,7 +64,31 @@ add_executable(tests
         memory/memory.c
         decode/decode.c
         execute/execute.c
+        encode/encode.c
         cpu/labels_table/labels_table.c
+        encode/opcode_table/opcode_table.c
+        cpu/registers_table/registers_table.c
+
+        # Decode builders
+        decode/buildersDecode/b/buildInstructionB.c
+        decode/buildersDecode/dpi/buildInstructionDPI.c
+        decode/buildersDecode/dpr/buildInstructionDPR.c
+        decode/buildersDecode/m/buildInstructionM.c
+
+        # Encode builders
+        encode/builders/builderB/b_Branch/builderB.c
+        encode/builders/builderDPI/dpi_Arithmetic/builderDPI_A.c
+        encode/builders/builderDPI/dpi_Logic/builderDPI_L.c
+        encode/builders/builderDPI/dpi_Move/builderDPI_MOV.c
+        encode/builders/builderDPI/dpi_Shift/builderDPI_Shift.c
+        encode/builders/builderDPR/dpi_Shift/builderDPR_Shift.c
+        encode/builders/builderDPR/dpr_Arithmetic/builderDPR_A.c
+        encode/builders/builderDPR/dpr_Logic/builderDPR_L.c
+        encode/builders/builderM/m_Access/builderM.c
+)
+
+target_include_directories(tests PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_link_libraries(tests unity_lib)

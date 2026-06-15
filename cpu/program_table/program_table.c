@@ -1,7 +1,7 @@
 #include "program_table.h"
 #include "stdint.h"
 
-Instruction program_table[1024]; 
+ProgramTableEntry program_table[1024]; 
 static uint64_t instruction_count = 0;
 
 void addInstruction(uint32_t instruction) {
