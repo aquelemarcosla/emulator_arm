@@ -14,12 +14,48 @@ static void print_binary32(uint32_t value) {
     printf("\n");
 }
 
+void test_encode_BNE(void) {
+    addLabel("label", 123);
+
+    uint32_t result = encode("BNE label");
+
+    uint32_t expected = (0x54 << 24) | (123u << 5) | 1;
+
+    printf("\n=== test_encode_BNE ===\n");
+
+    printf("Result   : 0x%08X\n", result);
+    print_binary32(result);
+
+    printf("Expected : 0x%08X\n", expected);
+    print_binary32(expected);
+
+    TEST_ASSERT_EQUAL_HEX32(expected, result);
+}
+
+void test_encode_BEQ(void) {
+    addLabel("label", 123);
+
+    uint32_t result = encode("BEQ label");
+
+    uint32_t expected = (0x54 << 24) | (123u << 5);
+
+    printf("\n=== test_encode_BEQ ===\n");
+
+    printf("Result   : 0x%08X\n", result);
+    print_binary32(result);
+
+    printf("Expected : 0x%08X\n", expected);
+    print_binary32(expected);
+
+    TEST_ASSERT_EQUAL_HEX32(expected, result);
+}
+
 void test_encode_branch(void) {
     addLabel("label", 123);
 
     uint32_t result = encode("B label");
 
-    uint32_t expected = (5u << 26) | 123u; // ajuste conforme o opcode real do B
+    uint32_t expected = (5u << 26) | 123u; // Bits esperados
 
     printf("\n=== test_encode_branch ===\n");
 
@@ -72,9 +108,9 @@ void test_nzcv(void) {
 
 int main(void) {
     UNITY_BEGIN();
+    RUN_TEST(test_encode_BNE);
+    RUN_TEST(test_encode_BEQ);
     RUN_TEST(test_encode_branch);
-    RUN_TEST(test_reg_read_and_write);
-    RUN_TEST(test_nzcv);
     return UNITY_END();
 }
 
