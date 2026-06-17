@@ -106,8 +106,24 @@ void test_nzcv(void) {
     TEST_ASSERT_EQUAL_UINT8(0xFF, get_nzcv(&cpu));
 }
 
+void test_encode_ADDI(void) {
+    uint32_t result = encode("ADDI X0, X1, #100");
+
+    // ADDI: bits [31:22] = 0x244, [21:10] = imm12, [9:5] = rn, [4:0] = rd
+    uint32_t expected = (0x244u << 22) | (100u << 10) | (1u << 5) | 0u;
+
+    printf("\n=== test_encode_ADDI ===\n");
+    printf("Result   : 0x%08X\n", result);
+    print_binary32(result);
+    printf("Expected : 0x%08X\n", expected);
+    print_binary32(expected);
+
+    TEST_ASSERT_EQUAL_HEX32(expected, result);
+}
+
 int main(void) {
     UNITY_BEGIN();
+    RUN_TEST(test_encode_ADDI);
     RUN_TEST(test_encode_BNE);
     RUN_TEST(test_encode_BEQ);
     RUN_TEST(test_encode_branch);
