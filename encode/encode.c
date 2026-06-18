@@ -19,15 +19,15 @@ uint32_t encode(const char *instruction) {
 
     char buffer[65];
 
-    // instruction para buffer.
-    // null no final.
+    // Copy instruction into the buffer.
+    // Null-terminate the buffer.
     strncpy(buffer, instruction, sizeof(buffer) - 1);
     buffer[sizeof(buffer) - 1] = '\0';
 
-    // token para o opcode inicial.
+    // Tokenize the initial opcode.
     char *token = strtok_r(buffer, delimitadores, &saveptr);
 
-    // Percorre e executa builder.
+    // Walk through the table and execute the builder.
     for (int i = 0; i < opcode_table_size; i++) {
         if (strcmp(token, opcode_table[i].mnemonic) == 0) {
             return opcode_table[i].builder(opcode_table[i].value, &saveptr);

@@ -3,7 +3,7 @@
 
 #include "../cpu/cpu.h"
 
-instruction decode(uint32_t data);  // Função que retorna a instrução decodificada
+instruction decode(uint32_t data);  // Function that returns the decoded instruction
 
 instruction buildDPR(uint32_t data);
 instruction buildDPI(uint32_t data);

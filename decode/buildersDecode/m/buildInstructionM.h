@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include "cpu/cpu.h"
 
-/* Acesso a memória */
+/* Memory access */
 instruction buildLDR(uint32_t data);
 instruction buildSTR(uint32_t data);
 

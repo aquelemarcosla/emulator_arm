@@ -28,7 +28,7 @@ uint32_t builderBL(uint32_t value, char **saveptr) {
     return instructionExit;
 }
 
-// "RET (Retorna endereço de retorno em x30)"
+// "RET (Returns the return address in x30)"
 uint32_t builderRET(uint32_t value, char **saveptr) {
     uint32_t instructionExit = value;
 

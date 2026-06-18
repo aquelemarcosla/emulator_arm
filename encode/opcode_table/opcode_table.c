@@ -23,8 +23,8 @@ OpcodeTable opcode_table[] = {
     {"LSLV", 0x4D6, &builderLSLV},
     {"LSRV", 0x4D6, &builderLSRV},
     // Memory Access
-    {"LDR", 0x1F5, &builderLDR},
-    {"STR", 0x1F4, &builderSTR},
+    {"LDR", 0x3E5, &builderLDR},
+    {"STR", 0x3E4, &builderSTR},
     // Branch & System
     {"B", 0x5, &builderB},
     {"BL", 0x25, &builderBL},

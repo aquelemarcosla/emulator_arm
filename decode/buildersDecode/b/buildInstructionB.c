@@ -3,7 +3,7 @@
 #include "cpu/cpu.h"
 #include "stdint.h"
 
-/* Branches (Desvios) */
+/* Branches (Jumps) */
 instruction buildBranch(uint32_t data) {
     instruction instruction = {0};
     return instruction;
@@ -13,7 +13,7 @@ instruction buildBL(uint32_t data) {
     return instruction;
 }
 
-// Desvios condicionais
+// Conditional branches
 instruction buildBEQ(uint32_t data) {
     instruction instruction = {0};
     return instruction;
@@ -23,7 +23,7 @@ instruction buildBNE(uint32_t data) {
     return instruction;
 }
 
-// Desvio incondicional
+// Unconditional branch
 instruction buildRET(uint32_t data) {
     instruction instruction = {0};
     return instruction;

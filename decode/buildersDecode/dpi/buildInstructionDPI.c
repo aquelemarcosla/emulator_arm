@@ -2,7 +2,7 @@
 #include "cpu/cpu.h"
 #include "stdint.h"
 
-/* Aritmética. */
+/* Arithmetic. */
 instruction buildADDI(uint32_t data) {
     instruction instruction = {0};
     return instruction;
@@ -16,7 +16,7 @@ instruction buildCMP(uint32_t data) {
     return instruction;
 }
 
-/* Lógica. */
+/* Logic. */
 instruction buildANDI(uint32_t data) {
     instruction instruction = {0};
     return instruction;
@@ -30,7 +30,7 @@ instruction buildEORI(uint32_t data) {
     return instruction;
 }
 
-/* Transferencia. */
+/* Transfer. */
 instruction buildMOVZ(uint32_t data) {
     instruction instruction = {0};
     return instruction;
@@ -40,7 +40,7 @@ instruction buildMOVN(uint32_t data) {
     return instruction;
 }
 
-/* Deslocamento */
+/* Shift. */
 instruction buildUBFM(uint32_t data) {
     instruction instruction = {0};
     return instruction;

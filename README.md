@@ -1,168 +1,182 @@
-# Emulador ARMv8/v9 (AArch64)
+# ARMv8/v9 Emulator (AArch64)
 
-Um emulador de CPU de arquitetura **ARM 64-bit** implementado em **C11**, com suporte completo ao conjunto de instruções ARMv8 básico. Segue a especificação ISA real com decodificação bit a bit.
+A **64-bit ARM architecture CPU emulator** implemented in **C11**, featuring support for the core ARMv8 instruction set. The project follows the real ISA specification with bit-level instruction decoding.
 
-## 🎯 Visão Geral
+## 🎯 Overview
 
 ```
                     ASSEMBLY INPUT
                     "ADDI x0, x1, 100"
                            ↓
                     ┌──────────────┐
-                    │   READER     │  (Lê do arquivo)
+                    │    READER    │  (Reads from file)
                     └──────────────┘
                            ↓
                     ┌──────────────┐
-                    │   ENCODE     │  (Mnemônico → 32-bit)
+                    │    ENCODE    │  (Mnemonic → 32-bit)
                     └──────────────┘
                            ↓
                     ┌──────────────┐
-                    │ PROG_TABLE   │  (Armazena bytecode)
+                    │ PROG_TABLE   │  (Stores bytecode)
                     └──────────────┘
                            ↓
-        ╔═══════════ EXECUTION LOOP ════════════╗
-        ║  ┌──────────────────────────────────┐ ║
+        ╔═══════════ EXECUTION LOOP ═══════════╗
+        ║  ┌─────────────────────────────────┐ ║
         ║  │ DECODE: 32-bit → instruction    │ ║
-        ║  └──────────────────────────────────┘ ║
-        ║                 ↓                      ║
-        ║  ┌──────────────────────────────────┐ ║
-        ║  │ EXECUTE: instruction → resultado │ ║
-        ║  └──────────────────────────────────┘ ║
-        ║                 ↓                      ║
-        ║  ┌──────────────────────────────────┐ ║
-        ║  │ CPU STATE UPDATED                │ ║
-        ║  │ (registradores, flags, PC, SP)   │ ║
-        ║  └──────────────────────────────────┘ ║
-        ╚════════════════════════════════════════╝
+        ║  └─────────────────────────────────┘ ║
+        ║                 ↓                     ║
+        ║  ┌─────────────────────────────────┐ ║
+        ║  │ EXECUTE: instruction → result   │ ║
+        ║  └─────────────────────────────────┘ ║
+        ║                 ↓                     ║
+        ║  ┌─────────────────────────────────┐ ║
+        ║  │ CPU STATE UPDATED               │ ║
+        ║  │ (registers, flags, PC, SP)      │ ║
+        ║  └─────────────────────────────────┘ ║
+        ╚═══════════════════════════════════════╝
                            ↓
                     CPU STATE OUTPUT
 ```
 
-## 📦 Estrutura do Projeto
+## 📦 Project Structure
 
 ```
-emulador_arm/
-├── cpu/                          # Estado da CPU (registradores, flags, PC, SP)
-│   ├── cpu.h/c                  # Definição: 32 regs, PC, SP, NZCV
-│   ├── registers_table/         # Mapear "x0" → índice 0
-│   ├── labels_table/            # Mapear "loop:" → endereço
-│   └── program_table/           # Armazenar instruções compiladas
+emulator_arm/
+├── cpu/                          # CPU state (registers, flags, PC, SP)
+│   ├── cpu.h/c                   # Definition: 32 registers, PC, SP, NZCV
+│   ├── registers_table/          # Maps "x0" → index 0
+│   ├── labels_table/             # Maps "loop:" → address
+│   └── program_table/            # Stores compiled instructions
 │
-├── memory/                       # Memória flat 128KB (131.072 bytes)
-│   ├── memory.h/c              # mem_read() / mem_write()
+├── memory/                       # Flat memory model (128 KB)
+│   ├── memory.h/c                # mem_read() / mem_write()
 │
-├── decode/                       # Converter 32-bit → instruction struct
-│   ├── decode.h/c              # Classificador (major groups)
-│   └── buildersDecode/          # Decodificadores especializados
-│       ├── dpi/                 # Data Processing Immediate
-│       ├── dpr/                 # Data Processing Register
-│       ├── m/                   # Memory Access (LDR/STR)
-│       └── b/                   # Branch (B/B.cond)
+├── decode/                       # Convert 32-bit → instruction struct
+│   ├── decode.h/c                # Instruction classifier
+│   └── buildersDecode/           # Specialized decoders
+│       ├── dpi/                  # Data Processing Immediate
+│       ├── dpr/                  # Data Processing Register
+│       ├── m/                    # Memory Access (LDR/STR)
+│       └── b/                    # Branch (B/B.cond)
 │
-├── encode/                       # Converter mnemônico → 32-bit
-│   ├── encode.h/c              # Parser principal
-│   ├── opcode_table/           # Lookup mnemônico → builder
-│   └── builders/                # Construtores especializados
-│       ├── builderDPI/         # Arit/Log/Mov/Shift
-│       ├── builderDPR/         # Arit/Log/Shift (com registrador)
-│       ├── builderM/           # LDR/STR
-│       └── builderB/           # B/B.cond
+├── encode/                       # Convert mnemonic → 32-bit
+│   ├── encode.h/c                # Main parser
+│   ├── opcode_table/             # Mnemonic → builder lookup
+│   └── builders/                 # Specialized builders
+│       ├── builderDPI/           # Arithmetic/Logic/Move/Shift
+│       ├── builderDPR/           # Register-based operations
+│       ├── builderM/             # LDR/STR
+│       └── builderB/             # B/B.cond
 │
-├── execute/                      # Engine de execução ⚠️ [VAZIO]
-│   ├── execute.h/c             # Implementar operações
+├── execute/                      # Execution engine ⚠️ [EMPTY]
+│   ├── execute.h/c               # Instruction execution logic
 │
-├── reader/                       # Ler arquivo assembly
+├── reader/                       # Assembly file reader
 │   ├── reader.h/c
 │
-├── tests/                        # Testes unitários (Unity Framework)
-│   └── test_cpu.c              # Suite de testes
+├── tests/                        # Unit tests (Unity Framework)
+│   └── test_cpu.c
 │
-├── main.c                        # Entry point (incompleto)
-├── CMakeLists.txt              # Build system
-└── README.md                    # Este arquivo
+├── main.c                        # Entry point (incomplete)
+├── CMakeLists.txt                # Build system
+└── README.md
 ```
 
-## 🏗️ Arquitetura em Camadas
+## 🏗️ Layered Architecture
 
-### 1️⃣ **CPU** - Estado do Processador
-- **32 registradores gerais** (x0-x31, 64-bit cada)
-- **Program Counter** (PC = reg 32)
-- **Stack Pointer** (SP = reg 33)
-- **Flags NZCV** (Negative, Zero, Carry, oVerflow - 4-bit)
+### 1️⃣ CPU – Processor State
 
-### 2️⃣ **Memória** - Espaço de Endereçamento
-- **Tamanho:** 128 KB (131.072 bytes)
-- **Tipo:** Flat, byte-addressable
-- **API:** `mem_read(addr)` / `mem_write(addr, data)`
+* **32 general-purpose registers** (x0–x31, 64-bit)
+* **Program Counter** (PC)
+* **Stack Pointer** (SP)
+* **NZCV Flags** (Negative, Zero, Carry, Overflow)
 
-### 3️⃣ **Decode** - Conversão 32-bit → Instruction
-Classifica instruções por **major group** (bits [28:25]):
-- `100x` → **DPI** (Data Processing Immediate)
-- `101x` → **B** (Branch)
-- `x101` → **DPR** (Data Processing Register)
-- `x1x0` → **M** (Memory Access)
+### 2️⃣ Memory – Address Space
 
-### 4️⃣ **Encode** - Conversão Mnemônico → 32-bit
-Parser com lookup em `OpcodeTable`:
-1. Extrai mnemônico ("ADDI")
-2. Busca builder correspondente
-3. Builder parsa operandos e monta opcode
+* **Size:** 128 KB (131,072 bytes)
+* **Type:** Flat, byte-addressable memory
+* **API:** `mem_read(addr)` / `mem_write(addr, data)`
 
-### 5️⃣ **Execute** - Execução de Instruções
-**⚠️ VAZIO - A IMPLEMENTAR**
+### 3️⃣ Decode – 32-bit → Instruction
 
-Deverá executar:
-- Operações DPI (ADDI, SUBI, ANDI, MOVZ, UBFM, etc.)
-- Operações DPR (ADD, SUB, AND, LSL, ROR, etc.)
-- Memory Access (LDR, STR)
-- Branch (B, B.cond)
+Instructions are classified by **major group** (bits [28:25]):
 
-## 📋 Instruções Suportadas
+* `100x` → **DPI** (Data Processing Immediate)
+* `101x` → **B** (Branch)
+* `x101` → **DPR** (Data Processing Register)
+* `x1x0` → **M** (Memory Access)
 
-### ✅ Implementadas (Encode/Decode)
+### 4️⃣ Encode – Mnemonic → 32-bit
+
+Parser workflow using `OpcodeTable`:
+
+1. Extract mnemonic (`"ADDI"`)
+2. Find the corresponding builder
+3. Parse operands and build the opcode
+
+### 5️⃣ Execute – Instruction Execution
+
+⚠️ **Not yet implemented**
+
+Planned support:
+
+* DPI operations (ADDI, SUBI, ANDI, MOVZ, UBFM, etc.)
+* DPR operations (ADD, SUB, AND, LSL, ROR, etc.)
+* Memory access (LDR, STR)
+* Branch instructions (B, B.cond)
+
+## 📋 Supported Instructions
+
+### ✅ Implemented (Encode/Decode)
 
 #### Data Processing Immediate (DPI)
-| Operação | Mnemônico | Descrição |
-|---|---|---|
-| Aritmética | ADDI, SUBI | Adicionar/Subtrair imediato |
-| | CMP | Comparar (atualiza flags) |
-| Lógica | ANDI, ORRI, EORI | AND/OR/XOR imediato |
-| Transferência | MOVZ, MOVN | Move com zero/NOT |
-| Deslocamento | UBFM | Unsigned Bit Field Move |
+
+| Operation  | Mnemonic         | Description             |
+| ---------- | ---------------- | ----------------------- |
+| Arithmetic | ADDI, SUBI       | Add/Subtract Immediate  |
+|            | CMP              | Compare (updates flags) |
+| Logical    | ANDI, ORRI, EORI | Immediate AND/OR/XOR    |
+| Move       | MOVZ, MOVN       | Move with Zero / NOT    |
+| Shift      | UBFM             | Unsigned Bit Field Move |
 
 #### Data Processing Register (DPR)
-| Operação | Mnemônico | Descrição |
-|---|---|---|
-| Aritmética | ADD, SUB | Adicionar/Subtrair |
-| | CMP | Comparar (atualiza flags) |
-| Lógica | AND, ORR, EOR | AND/OR/XOR |
-| Deslocamento | LSL, LSR, ASR, ROR | Shift/Rotate |
 
-#### Memory Access (M)
-| Operação | Mnemônico | Descrição |
-|---|---|---|
-| Carregamento | LDR | Load Register (64-bit) |
-| | LDR (signed) | Load com extensão de sinal |
-| Armazenamento | STR | Store Register |
+| Operation  | Mnemonic           | Description             |
+| ---------- | ------------------ | ----------------------- |
+| Arithmetic | ADD, SUB           | Add/Subtract            |
+|            | CMP                | Compare (updates flags) |
+| Logical    | AND, ORR, EOR      | AND/OR/XOR              |
+| Shift      | LSL, LSR, ASR, ROR | Shift/Rotate            |
 
-#### Branch (B)
-| Operação | Mnemônico | Descrição |
-|---|---|---|
-| Incondicional | B | Branch (26-bit offset) |
-| Condicional | B.cond | Branch se condição atendida |
+#### Memory Access
 
-### 🟡 Estrutura Definida (Execute Vazio)
-- Todas as decodificações prontas
-- Builders de encode prontos
-- **Falta:** Lógica de execução em `execute.c`
+| Operation | Mnemonic     | Description              |
+| --------- | ------------ | ------------------------ |
+| Load      | LDR          | Load Register (64-bit)   |
+|           | LDR (signed) | Load with sign extension |
+| Store     | STR          | Store Register           |
 
-## 🚀 Build & Execução
+#### Branch
 
-### Pré-requisitos
-- GCC/Clang com suporte C11
-- CMake ≥ 3.20
+| Operation     | Mnemonic | Description            |
+| ------------- | -------- | ---------------------- |
+| Unconditional | B        | Branch (26-bit offset) |
+| Conditional   | B.cond   | Conditional branch     |
 
-### Compilar
+### 🟡 Structure Defined (Execution Missing)
+
+* All instruction decoders implemented
+* All encoding builders implemented
+* Execution logic pending implementation
+
+## 🚀 Build & Run
+
+### Requirements
+
+* GCC or Clang with C11 support
+* CMake ≥ 3.20
+
+### Build
 
 ```bash
 mkdir build
@@ -171,53 +185,58 @@ cmake ..
 cmake --build .
 ```
 
-**Produtos:**
-- `emulador_arm` - Executável principal
-- `tests` - Executável de testes (com Unity)
+Generated binaries:
 
-### Executar Testes
+* `emulator_arm` — Main executable
+* `tests` — Unit test executable (Unity)
+
+### Run Tests
 
 ```bash
 cd build
 ./tests
 ```
 
-Ou no Windows:
+Windows:
+
 ```bash
 .\tests.exe
 ```
 
-### Executar Emulador
+### Run Emulator
 
 ```bash
-./emulador_arm
+./emulator_arm
 ```
 
-**Nota:** `main.c` está incompleto. Implementar loop de execução.
+**Note:** `main.c` is currently incomplete and does not yet contain the execution loop.
 
-## 🔍 Exemplo de Fluxo
+## 🔍 Example Workflow
 
-### Input: Assembly
+### Assembly Input
+
 ```asm
 ADDI x0, x1, 100
 ```
 
 ### 1️⃣ Encode
-```
+
+```text
 "ADDI x0, x1, 100"
     ↓
 Lookup: "ADDI" → builderADDI
     ↓
 Parse: rd=0, rn=1, imm=100
     ↓
-Monta: 0x91000000 | (0) | (1<<5) | (100<<10)
+Build: 0x91000000 | (0) | (1<<5) | (100<<10)
     ↓
-Resultado: 0x91019020
+Result: 0x91019020
 ```
 
 ### 2️⃣ Decode
-```
-0x91019000
+
+```text
+0x91019020
     ↓
 Bits [28:25] = 0x9 (100x) → DPI
     ↓
@@ -229,206 +248,171 @@ instruction { opcode: ADDI, rd: 0, rn: 1, imm: 100 }
 ```
 
 ### 3️⃣ Execute (TODO)
-```
+
+```text
 instruction { opcode: ADDI, rd: 0, rn: 1, imm: 100 }
     ↓
-operando1 = CPU.regs[1]
-operando2 = 100
+operand1 = CPU.regs[1]
+operand2 = 100
     ↓
-resultado = operando1 + operando2
+result = operand1 + operand2
     ↓
-CPU.regs[0] = resultado
+CPU.regs[0] = result
     ↓
-Atualizar flags NZCV conforme necessário
+Update NZCV flags if required
     ↓
-CPU.pc += 4 (próxima instrução)
+CPU.pc += 4
 ```
 
-## 📊 Estruturas de Dados Principais
+## 📊 Core Data Structures
 
 ### CPU
+
 ```c
 typedef struct {
-    uint64_t regs[32];  // R0-R31 (64-bit)
-    uint64_t pc;        // Program Counter
-    uint64_t sp;        // Stack Pointer
-    uint8_t nzcv;       // Flags NZCV
+    uint64_t regs[32];
+    uint64_t pc;
+    uint64_t sp;
+    uint8_t nzcv;
 } CPU;
 ```
 
-### instruction (Decodificada)
+### Decoded Instruction
+
 ```c
 typedef struct {
-    uint8_t opcode;     // ID da instrução
-    uint8_t type;       // DPI, DPR, M, B
-    uint8_t rd;         // Registrador destino
-    uint8_t rn;         // Registrador operando 1
-    uint8_t rm;         // Registrador operando 2
-    int64_t imm;        // Imediato com sinal
+    uint8_t opcode;
+    uint8_t type;
+    uint8_t rd;
+    uint8_t rn;
+    uint8_t rm;
+    int64_t imm;
 } instruction;
 ```
 
-### OpcodeTable (Lookup Encode)
+### OpcodeTable
+
 ```c
 typedef struct {
-    char *mnemonic;                    // "ADDI", "ADD", etc.
-    uint32_t value;                    // Base opcode
-    uint32_t (*builder)(uint32_t, char **);  // Function builder
+    char *mnemonic;
+    uint32_t value;
+    uint32_t (*builder)(uint32_t, char **);
 } OpcodeTable;
 ```
 
-## 🧪 Testes
+## 🧪 Testing
 
 ### Framework
-- **Unity** (ThrowTheSwitch/Unity)
-- Integrado via FetchContent em CMakeLists.txt
 
-### Rodar Testes
-```bash
-./tests
-```
+* **Unity** (ThrowTheSwitch/Unity)
+* Integrated through CMake FetchContent
 
-### Exemplo de Teste
+### Example Test
+
 ```c
-TEST_IGNORE_MESSAGE("Implementar execute");
+TEST_IGNORE_MESSAGE("Implement execute");
 TEST(cpu, test_addi_basic) {
     CPU cpu = {0};
     cpu.regs[1] = 10;
-    
-    instruction inst = { .opcode = ADDI, .rd = 0, .rn = 1, .imm = 5 };
+
+    instruction inst = {
+        .opcode = ADDI,
+        .rd = 0,
+        .rn = 1,
+        .imm = 5
+    };
+
     execute(&cpu, inst);
-    
+
     TEST_ASSERT_EQUAL_INT(15, cpu.regs[0]);
 }
 ```
 
-## 📈 Status do Projeto
+## 📈 Project Status
 
-| Componente | Status | Notas |
-|---|---|---|
-| **CPU** | ✅ Implementado | Registradores, PC, SP, NZCV |
-| **Memória** | ✅ Implementado | 128KB, read/write |
-| **Decode** | ✅ Implementado | Major groups + builders especializados |
-| **Encode** | ✅ Implementado | Builders para DPI, DPR, M, B |
-| **Execute** | 🔴 VAZIO | **PRIORIDADE: Implementar** |
-| **Reader** | 🟡 Parcial | Interface definida |
-| **Main** | 🟡 Incompleto | Sem loop de execução |
-| **Testes** | ✅ Framework | Unity integrado, testes básicos |
+| Component | Status        | Notes                               |
+| --------- | ------------- | ----------------------------------- |
+| CPU       | ✅ Implemented | Registers, PC, SP, NZCV             |
+| Memory    | ✅ Implemented | 128 KB, read/write                  |
+| Decode    | ✅ Implemented | Major groups + specialized builders |
+| Encode    | ✅ Implemented | DPI, DPR, M, B builders             |
+| Execute   | 🔴 Empty      | Priority implementation             |
+| Reader    | 🟡 Partial    | Interface defined                   |
+| Main      | 🟡 Incomplete | No execution loop                   |
+| Tests     | ✅ Available   | Unity integrated                    |
 
-## 🎯 Próximos Passos
+## 🎯 Next Steps
 
-### 🔴 CRÍTICO
+### 🔴 Critical
 
-1. **Implementar `execute.c`**
-   - [ ] Estrutura switch por tipo (DPI, DPR, M, B)
-   - [ ] Operações aritméticas (ADD, SUB, CMP)
-   - [ ] Operações lógicas (AND, OR, EOR)
-   - [ ] Deslocamentos (LSL, LSR, ASR, ROR)
-   - [ ] Memory Access (LDR, STR)
-   - [ ] Branch (B, B.cond)
-   - [ ] Atualizar flags NZCV
+1. Implement `execute.c`
 
-2. **Completar `main.c`**
-   - [ ] Loop de execução
-   - [ ] Carregamento de programa
-   - [ ] Debugging/output
+   * Arithmetic operations
+   * Logical operations
+   * Shift operations
+   * Memory access
+   * Branch handling
+   * NZCV updates
 
-### 🟡 IMPORTANTE
+2. Complete `main.c`
 
-3. **Validação**
-   - [ ] Testes para cada instrução
-   - [ ] Testes de flags
-   - [ ] Testes de memória
+   * Execution loop
+   * Program loading
+   * Debugging/output support
 
-4. **Integração**
-   - [ ] Reader funcional
-   - [ ] Program table integrada
+### 🟡 Important
 
-### 🟢 OPCIONAL
+3. Validation
 
-5. **Otimizações**
-   - [ ] JIT compilation
-   - [ ] Cache de decodificação
-   - [ ] Profiling de performance
+   * Instruction tests
+   * Flag tests
+   * Memory tests
 
-## 📚 Referências Técnicas
+4. Integration
 
-### Flags NZCV
-| Flag | Bit | Significado |
-|---|---|---|
-| **N** | 3 | Negative (resultado < 0) |
-| **Z** | 2 | Zero (resultado = 0) |
-| **C** | 1 | Carry (overflow unsigned) |
-| **V** | 0 | oVerflow (overflow signed) |
+   * Functional reader
+   * Program table integration
 
-### Mapeamento de Registradores
-- `x0` - `x30` - General purpose (64-bit)
-- `sp` (x31) - Stack Pointer
-- `pc` (reg 32) - Program Counter
-- `lr` (x30) - Link Register
+### 🟢 Optional
 
-### Formato de Instruções (32-bit)
+5. Optimizations
 
-#### DPI (Data Processing Immediate)
-```
-[31:30] = opcode
-[28:23] = subgrupo
-[21:10] = imm12
-[9:5]   = Rn
-[4:0]   = Rd
-```
+   * JIT compilation
+   * Decode cache
+   * Performance profiling
 
-#### DPR (Data Processing Register)
-```
-[31:30] = opcode
-[28:23] = subgrupo
-[20:16] = Rm
-[15:10] = shift
-[9:5]   = Rn
-[4:0]   = Rd
-```
+## 📚 Technical References
 
-#### Memory (Load/Store)
-```
-[31:30] = opcode
-[28:26] = tipo
-[20:12] = offset
-[9:5]   = Rn (base)
-[4:0]   = Rd
-```
+### NZCV Flags
 
-#### Branch
-```
-[31:26] = tipo
-[25:0]  = offset (incondicional)
-[23:5]  = offset (condicional)
-[3:0]   = condição
-```
+| Flag | Bit | Meaning  |
+| ---- | --- | -------- |
+| N    | 3   | Negative |
+| Z    | 2   | Zero     |
+| C    | 1   | Carry    |
+| V    | 0   | Overflow |
 
-## 🔗 Documentação Completa
+### Register Mapping
 
-Especificação técnica com decodificação completa:
-[Google Docs - Especificação ARMv8](https://docs.google.com/document/d/1nCxWcpsC2XD4zM9s9ckRc43idRU_xRvVgKaxZFFLdBc/edit?usp=sharing)
+* `x0`–`x30` — General-purpose registers
+* `sp` (`x31`) — Stack Pointer
+* `pc` — Program Counter
+* `lr` (`x30`) — Link Register
 
-Mapa completo do projeto:
-`~/.copilot/session-state/.../MAPA_COMPLETO.md`
-
-## 📝 Licença
+## 📝 License
 
 MIT License — Copyright (c) 2026 Marcos Aurelio
 
----
+## 🤝 Contributing
 
-## 🤝 Contribuindo
+Contributions are welcome:
 
-Este é um projeto educacional. Para contribuir:
-
-1. Implementar `execute.c` com operações básicas
-2. Expandir testes em `test_cpu.c`
-3. Adicionar suporte para mais instruções ARMv8
-4. Melhorar documentação
+1. Implement `execute.c`
+2. Expand unit tests
+3. Add support for additional ARMv8 instructions
+4. Improve documentation
 
 ---
 
-**Última atualização:** 2026-06-17
-**Status Geral:** Estrutura completa, execução em desenvolvimento ⚠️
+**Last Updated:** 2026-06-17
+**Project Status:** Core architecture complete, execution engine under development ⚠️

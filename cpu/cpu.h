@@ -10,21 +10,21 @@ typedef struct {
     uint8_t nzcv;       // NZCV flags
 } CPU;
 
-typedef struct {  // struct da instrução
+typedef struct {  // instruction struct
     uint8_t opcode;
     uint8_t type;
     uint8_t rd;
     uint8_t rn;    // R1
     uint8_t rm;    // R2
-    int64_t imm;   // Imediatos com sinal para possíveis negativos
+    int64_t imm;   // Signed immediates for possible negative values
 } instruction;
 
 uint8_t get_nzcv(CPU *cpu);
 
 void set_nzcv(CPU *cpu, uint8_t nzcv);
 
-uint64_t reg_read(CPU *cpu, int reg);  // Leitura de registrador
+uint64_t reg_read(CPU *cpu, int reg);  // Register read
 
-void reg_write(CPU *cpu, int reg, uint64_t value);  // Escrita de registrador
+void reg_write(CPU *cpu, int reg, uint64_t value);  // Register write
 
 #endif

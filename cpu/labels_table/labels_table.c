@@ -9,9 +9,9 @@ LabelsTable labels_table[MAX_LABELS] = {0};
 
 void addLabel(const char *name, uint64_t address) {
     for (int i = 0; i < MAX_LABELS; i++) {
-        if (labels_table[i].name[0] == '\0') { //verifica vazio.
+        if (labels_table[i].name[0] == '\0') { // check if empty.
             strncpy(labels_table[i].name, name, sizeof(labels_table[i].name) - 1);
-            labels_table[i].name[sizeof(labels_table[i].name) - 1] = '\0'; //null final.
+            labels_table[i].name[sizeof(labels_table[i].name) - 1] = '\0'; // null terminator.
             labels_table[i].address = address;  
             return;
         } 

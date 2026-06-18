@@ -3,16 +3,16 @@
 #include <stdint.h>
 #include "cpu/cpu.h"
 
-/* Aritmética. */
+/* Arithmetic. */
 instruction buildADD(uint32_t data);
 instruction buildSUB(uint32_t data);
 
-/* Lógica. */
+/* Logic. */
 instruction buildAND(uint32_t data);
 instruction buildORR(uint32_t data);
 instruction buildEOR(uint32_t data);
 
-/* Deslocamento. */
+/* Shift. */
 instruction buildLSRV(uint32_t data);
 instruction buildLSLV(uint32_t data);
 

@@ -87,15 +87,29 @@ uint8_t find_register(char **saveptr) {
 uint16_t find_immediate(char **saveptr) {
     char *token = strtok_r(NULL, " ,\t\r\n", saveptr);
     char *endptr;
+    int base = 10;
+    char *tokenContinue;
 
-    if (token == NULL) {
+    if (token == NULL || token[0] != '#') {
         fprintf(stderr, "Erro: Imediato invalido.\n");
         exit(EXIT_FAILURE);
     }
 
-    long value = strtol(token + 1, &endptr, 10);
+    tokenContinue = token + 1;
+
+    if (tokenContinue[0] && (tokenContinue[1] == 'x' || tokenContinue[1] == 'X')) {
+        base = 16;
+        tokenContinue += 2;
+    }
+
+    if (tokenContinue == NULL) {
+        fprintf(stderr, "Erro: Imediato invalido.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    long value = strtol(tokenContinue, &endptr, base);
     
-    if (token[0] != '#' || endptr == token + 1 || *endptr != '\0' || value < 0) {
+    if (endptr == tokenContinue || *endptr != '\0' || value < 0 || value > 0xFFFF) {
         fprintf(stderr, "Erro: Imediato invalido.\n");
         exit(EXIT_FAILURE);
     }

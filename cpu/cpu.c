@@ -1,17 +1,17 @@
 #include "cpu.h"
 #include <stdint.h>
 
-void reg_write(CPU *cpu, int reg, uint64_t value) {  // Escrita de registrador
-    if (reg == 31) {  // caso XZR
+void reg_write(CPU *cpu, int reg, uint64_t value) {  // Register write
+    if (reg == 31) {  // XZR case
         return;
     }
 
-    if (reg == 32) {  // caso PC
+    if (reg == 32) {  // PC case
         cpu->pc = value;
         return;
     }
 
-    if (reg == 33) {  // caso SP
+    if (reg == 33) {  // SP case
         cpu->sp = value;
         return;
     }
@@ -23,16 +23,16 @@ void reg_write(CPU *cpu, int reg, uint64_t value) {  // Escrita de registrador
     cpu->regs[reg] = value;
 }
 
-uint64_t reg_read(CPU *cpu, int reg) {  // Leitura de registrador
-    if (reg == 31) {  // caso XZR
+uint64_t reg_read(CPU *cpu, int reg) {  // Register read
+    if (reg == 31) {  // XZR case
         return 0;
     }
 
-    if (reg == 32) {  // caso PC
+    if (reg == 32) {  // PC case
         return cpu->pc;
     }
 
-    if (reg == 33) {  // caso SP
+    if (reg == 33) {  // SP case
         return cpu->sp;
     }
 
