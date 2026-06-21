@@ -18,4 +18,7 @@
 // Branch & System
 #include "builderB/b_Branch/builderB.h"
 
+uint32_t find_immediate(char **saveptr);
+uint8_t find_register(char **saveptr);
+
 #endif

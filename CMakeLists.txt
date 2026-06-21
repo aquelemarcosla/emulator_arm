@@ -51,9 +51,7 @@ add_executable(emulador_arm
         encode/builders/builderDPR/dpr_Logic/builderDPR_L.c
         encode/builders/builderM/m_Access/builderM.c
         cpu/program_table/program_table.h
-        tests/test_encode/test_encode_dpi_a.c
-        tests/test_main.c
-        tests/test_encode/test_encode_b.c
+        encode/builders/builders.c
 )
 
 target_include_directories(emulador_arm PRIVATE
@@ -91,6 +89,8 @@ add_executable(tests
         tests/test_encode/test_encode_dpi_a.c
         tests/test_main.c
         tests/test_encode/test_encode_b.c
+        tests/test_encode/test_encode_dpi_l.c
+        encode/builders/builders.c
 )
 
 target_include_directories(tests PRIVATE

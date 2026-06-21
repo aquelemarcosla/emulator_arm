@@ -17,7 +17,7 @@ void addLabel(const char *name, uint64_t address) {
         } 
     }
 
-    fprintf(stderr, "Erro: espaço insuficiente para label\n");
+    fprintf(stderr, "Error: insufficient space for label\n");
     exit(EXIT_FAILURE);
 }
 
@@ -28,6 +28,6 @@ uint64_t getLabelAddress(const char *name) {
         }
     }
 
-    fprintf(stderr, "Erro: label '%s' nao encontrada\n", name);
+    fprintf(stderr, "Error: label '%s' not found\n", name);
     exit(EXIT_FAILURE);
 }

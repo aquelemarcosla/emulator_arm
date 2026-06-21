@@ -5,27 +5,27 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-uint32_t encode(const char *instruction) {
-    if (instruction == NULL){
+uint32_t encode(const char *instructionText) {
+    if (instructionText == NULL){
         return 0;
-    } else if (strlen(instruction) == 0){
+    } else if (strlen(instructionText) == 0){
         return 0;
     }
 
     uint32_t instruction_decode = 0;   
 
     char *saveptr;
-    const char *delimitadores = " ,\t\r\n";
+    const char *delimiters = " ,\t\r\n";
 
     char buffer[65];
 
     // Copy instruction into the buffer.
     // Null-terminate the buffer.
-    strncpy(buffer, instruction, sizeof(buffer) - 1);
+    strncpy(buffer, instructionText, sizeof(buffer) - 1);
     buffer[sizeof(buffer) - 1] = '\0';
 
     // Tokenize the initial opcode.
-    char *token = strtok_r(buffer, delimitadores, &saveptr);
+    char *token = strtok_r(buffer, delimiters, &saveptr);
 
     // Walk through the table and execute the builder.
     for (int i = 0; i < opcode_table_size; i++) {
@@ -34,6 +34,6 @@ uint32_t encode(const char *instruction) {
         }
     }
 
-    fprintf(stderr, "Erro: encode\n");
+    fprintf(stderr, "Error: encoding failed\n");
     exit(EXIT_FAILURE);
 }

@@ -13,12 +13,15 @@ void test_encode_Branch(void);
 void test_encode_ADDI(void);
 void test_encode_SUBI(void);
 void test_encode_CMPI(void);
+void test_encode_ANDI(void);
+void test_encode_ORRI(void);
+void test_encode_EORI(void);
 
 void setUp(void){}
 void tearDown(void){}
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_encode_CMPI);
+    RUN_TEST(test_encode_EORI);
     UNITY_END();
 }
