@@ -16,12 +16,14 @@ void test_encode_CMPI(void);
 void test_encode_ANDI(void);
 void test_encode_ORRI(void);
 void test_encode_EORI(void);
+void test_encode_MOVZ(void);
+void test_encode_MOVN(void);
 
 void setUp(void){}
 void tearDown(void){}
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_encode_EORI);
+    RUN_TEST(test_encode_MOVN);
     UNITY_END();
 }

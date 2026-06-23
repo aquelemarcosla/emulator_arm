@@ -91,6 +91,7 @@ add_executable(tests
         tests/test_encode/test_encode_b.c
         tests/test_encode/test_encode_dpi_l.c
         encode/builders/builders.c
+        "tests/test_encode/test_encode_dpi_mov.c"
 )
 
 target_include_directories(tests PRIVATE
