@@ -3,18 +3,28 @@
 #include "string.h"
 #include "encode/opcode_table/opcode_table.h"
 #include "cpu/labels_table/labels_table.h"
+#include "cpu/program_table/program_table.h"
 #define MOVE_BITS(data, mask, shift) (((uint32_t)(data) & (mask)) << (shift))
 
 // "B label(imm26)"
 uint32_t builderB(uint32_t value, char **saveptr) {
-    uint32_t instructionExit = MOVE_BITS(value, 0x3F, 26);
+    uint64_t currentPC = getLastPC();
+    uint64_t targetLabel;
+    int64_t targetOffset;
+    uint32_t instructionExit = 0;
 
+    // Get the label.
     char *token = strtok_r(NULL, " \t\r\n", saveptr);
     if (token == NULL) return 0;
 
-    instructionExit |= MOVE_BITS(getLabelAddress(token), 0x3FFFFFF, 0);
-    return instructionExit;
+    // Calculate relative PC.
+    targetLabel = getLabelAddress(token);
+    targetOffset = (targetLabel - currentPC) / 4;
 
+    instructionExit |= MOVE_BITS(value, 0x3F, 26);
+    instructionExit |= MOVE_BITS(targetOffset, 0x3FFFFFF, 0);
+
+    return instructionExit;
 }
 
 // "BL label(imm26)"

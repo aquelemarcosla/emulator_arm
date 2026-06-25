@@ -18,8 +18,10 @@ uint32_t find_immediate(char **saveptr) {
         exit(EXIT_FAILURE);
     }
 
+    // token[0] --> token[1]
     tokenContinue = token + 1;
 
+    // Verify '0x0'(base 16) or '#(int)'(base 10)
     if (tokenContinue[0] && (tokenContinue[1] == 'x' || tokenContinue[1] == 'X')) {
         base = 16;
         tokenContinue += 2;
@@ -30,8 +32,10 @@ uint32_t find_immediate(char **saveptr) {
         exit(EXIT_FAILURE);
     }
 
+    // Get value
     long value = strtol(tokenContinue, &endptr, base);
 
+    // Final verify
     if (endptr == tokenContinue || *endptr != '\0' || value < 0 || value > 0xFFFF) {
         fprintf(stderr, "Error: invalid immediate value\n");
         exit(EXIT_FAILURE);

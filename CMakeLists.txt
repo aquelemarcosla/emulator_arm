@@ -22,7 +22,7 @@ target_include_directories(unity_lib PUBLIC
         ${unity_SOURCE_DIR}/src
 )
 
-# Executável principal
+# Principal execute
 add_executable(emulador_arm
         main.c
         cpu/cpu.c
@@ -52,13 +52,15 @@ add_executable(emulador_arm
         encode/builders/builderM/m_Access/builderM.c
         cpu/program_table/program_table.h
         encode/builders/builders.c
+        cpu/program_table/program_table.c
+        reader/reader.c
 )
 
 target_include_directories(emulador_arm PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-# Executável de teste
+# Test execute
 add_executable(tests
         tests/test_cpu/test_cpu.c
         cpu/cpu.c
@@ -69,6 +71,7 @@ add_executable(tests
         cpu/labels_table/labels_table.c
         encode/opcode_table/opcode_table.c
         cpu/registers_table/registers_table.c
+        cpu/program_table/program_table.c
 
         # Decode builders
         decode/buildersDecode/b/buildInstructionB.c
@@ -92,6 +95,7 @@ add_executable(tests
         tests/test_encode/test_encode_dpi_l.c
         encode/builders/builders.c
         "tests/test_encode/test_encode_dpi_mov.c"
+        reader/reader.c
 )
 
 target_include_directories(tests PRIVATE

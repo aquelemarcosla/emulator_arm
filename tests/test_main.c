@@ -24,6 +24,6 @@ void tearDown(void){}
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_encode_MOVN);
+    RUN_TEST(test_encode_Branch);
     UNITY_END();
 }
