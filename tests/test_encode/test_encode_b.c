@@ -43,11 +43,20 @@ void test_encode_Branch(void) {
 }
 
 void test_encode_BNE(void) {
-    addLabel("label", 123);
+
+    // Add 0 (32bits) to program_table to create PC.
+    addInstruction(0);
+
+    uint64_t currentPC = getLastPC();
+    uint64_t targetLabel = 12;
+    int64_t targetOffset;
+    addLabel("label", 12);
+
+    targetOffset = (targetLabel - currentPC) / 4;
 
     uint32_t result = encode("BNE label");
 
-    uint32_t expected = (0x54 << 24) | (123u << 5) | 1;
+    uint32_t expected = (0x54u << 24) | (targetOffset << 5) | (0u << 4) | 1; // Expected bits
 
     printf("\n=== test_encode_BNE ===\n");
 
@@ -61,11 +70,20 @@ void test_encode_BNE(void) {
 }
 
 void test_encode_BEQ(void) {
-    addLabel("label", 123);
+
+    // Add 0 (32bits) to program_table to create PC.
+    addInstruction(0);
+
+    uint64_t currentPC = getLastPC();
+    uint64_t targetLabel = 12;
+    int64_t targetOffset;
+    addLabel("label", 12);
+
+    targetOffset = (targetLabel - currentPC) / 4;
 
     uint32_t result = encode("BEQ label");
 
-    uint32_t expected = (0x54 << 24) | (123u << 5);
+    uint32_t expected = (0x54u << 24) | (targetOffset << 5) | (0u << 4) | 0u; // Expected bits
 
     printf("\n=== test_encode_BEQ ===\n");
 

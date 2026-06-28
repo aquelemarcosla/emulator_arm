@@ -54,6 +54,7 @@ add_executable(emulador_arm
         encode/builders/builders.c
         cpu/program_table/program_table.c
         reader/reader.c
+        tests/test_encode/test_encode_dpi_shift.c
 )
 
 target_include_directories(emulador_arm PRIVATE
@@ -96,6 +97,7 @@ add_executable(tests
         encode/builders/builders.c
         "tests/test_encode/test_encode_dpi_mov.c"
         reader/reader.c
+        tests/test_encode/test_encode_dpi_shift.c
 )
 
 target_include_directories(tests PRIVATE

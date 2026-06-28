@@ -61,3 +61,4 @@ uint8_t find_register(char **saveptr) {
     fprintf(stderr, "Error: invalid register\n");
     exit(EXIT_FAILURE);
 }
+
