@@ -36,11 +36,15 @@ void test_encode_dpr_AND(void);
 void test_encode_dpr_ORR(void);
 void test_encode_dpr_EOR(void);
 
+// Test encode Memory
+void test_encode_m_LDR(void);
+
 void setUp(void){}
 void tearDown(void){}
 
+
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_encode_dpr_EOR);
+    RUN_TEST(test_encode_m_LDR);
     UNITY_END();
 }

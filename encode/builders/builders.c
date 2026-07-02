@@ -8,7 +8,7 @@
 #include "cpu/registers_table/registers_table.h"
 
 uint32_t find_immediate(char **saveptr) {
-    char *token = strtok_r(NULL, " ,\t\r\n", saveptr);
+    char *token = strtok_r(NULL, " ,[]\t\r\n", saveptr);
     char *endptr;
     int base = 10;
     char *tokenContinue;
@@ -45,7 +45,7 @@ uint32_t find_immediate(char **saveptr) {
 }
 
 uint8_t find_register(char **saveptr) {
-    char *token = strtok_r(NULL, " ,\t\r\n", saveptr);
+    char *token = strtok_r(NULL, " ,[]\t\r\n", saveptr);
 
     if (token == NULL) {
         fprintf(stderr, "Error: invalid register\n");

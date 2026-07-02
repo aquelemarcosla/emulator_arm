@@ -1,0 +1,3 @@
+Implement LDR/STR encode and add LDR test
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
