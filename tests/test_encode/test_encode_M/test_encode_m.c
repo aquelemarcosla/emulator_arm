@@ -26,3 +26,18 @@ void test_encode_m_LDR(void) {
 
     TEST_ASSERT_EQUAL_HEX32(expected, result);
 }
+
+void test_encode_m_STR(void) {
+    uint32_t result = encode("STR X0, [X1, #8]");
+
+    // STR: bits [31:22] = 0x3E4, [21:10] = imm12 (imm/8), [9:5] = rn, [4:0] = rt
+    uint32_t expected = (0x3E4u << 22) | (1u << 10) | (1u << 5) | 0u;
+
+    printf("\n=== test_encode_m_STR ===\n");
+    printf("Result   : 0x%08X\n", result);
+    print_binary32(result);
+    printf("Expected : 0x%08X\n", expected);
+    print_binary32(expected);
+
+    TEST_ASSERT_EQUAL_HEX32(expected, result);
+}
