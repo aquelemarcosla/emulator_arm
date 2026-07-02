@@ -31,11 +31,16 @@ void test_encode_dpr_LSRV(void);
 void test_encode_dpr_ADD(void);
 void test_encode_dpr_SUB(void);
 
+// Test encode DPR_L
+void test_encode_dpr_AND(void);
+void test_encode_dpr_ORR(void);
+void test_encode_dpr_EOR(void);
+
 void setUp(void){}
 void tearDown(void){}
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_encode_dpr_SUB);
+    RUN_TEST(test_encode_dpr_EOR);
     UNITY_END();
 }

@@ -58,6 +58,7 @@ add_executable(emulador_arm
         tests/test_encode/test_encode_DPR/test_encode_dpr_shift.c
         execute/execute.h
         tests/test_encode/test_encode_DPR/test_encode_dpr_a.c
+        tests/test_encode/test_encode_DPR/test_encode_dpr_logic.c
 )
 
 target_include_directories(emulador_arm PRIVATE
@@ -103,6 +104,7 @@ add_executable(tests
         tests/test_encode/test_encode_DPI/test_encode_dpi_shift.c
         tests/test_encode/test_encode_DPR/test_encode_dpr_shift.c
         tests/test_encode/test_encode_DPR/test_encode_dpr_a.c
+        tests/test_encode/test_encode_DPR/test_encode_dpr_logic.c
 )
 
 target_include_directories(tests PRIVATE
