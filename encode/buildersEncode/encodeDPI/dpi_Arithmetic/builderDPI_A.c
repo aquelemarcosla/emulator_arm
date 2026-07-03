@@ -1,7 +1,7 @@
 #include "builderDPI_A.h"
 
 #include "stdint.h"
-#include "encode/builders/builders.h"
+#include "encode/buildersEncode/buildersEncode.h"
 
 #define MOVE_BITS(data, mask, shift) (((uint32_t)(data) & (mask)) << (shift))
 

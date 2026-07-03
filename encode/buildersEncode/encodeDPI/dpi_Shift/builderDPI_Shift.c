@@ -1,6 +1,6 @@
 #include "builderDPI_Shift.h"
 #include "stdint.h"
-#include "encode/builders/builders.h"
+#include "encode/buildersEncode/buildersEncode.h"
 
 #define MOV_BITS(data, mask, shift) (((uint32_t)(data) & (mask)) << (shift))
 

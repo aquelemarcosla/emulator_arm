@@ -1,9 +1,9 @@
 #ifndef BUILDERSDECODE_H
 #define BUILDERSDECODE_H
 
-#include "b/buildInstructionB.h"
-#include "dpi/buildInstructionDPI.h"
-#include "dpr/buildInstructionDPR.h"
-#include "m/buildInstructionM.h"
+#include "decodeBranch/buildInstructionB.h"
+#include "decodeDPI/buildInstructionDPI.h"
+#include "decodeDPR/buildInstructionDPR.h"
+#include "decodeMemory/buildInstructionM.h"
 
 #endif //BUILDERSDECODE_H

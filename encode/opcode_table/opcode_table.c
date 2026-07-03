@@ -1,6 +1,6 @@
 #include "opcode_table.h"
 #include <stdint.h>
-#include "../builders/builders.h"
+#include "../buildersEncode/buildersEncode.h"
 
 OpcodeTable opcode_table[] = {
     // DPI

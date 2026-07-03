@@ -35,23 +35,23 @@ add_executable(emulador_arm
         cpu/labels_table/labels_table.c
 
         # Decode builders
-        decode/buildersDecode/b/buildInstructionB.c
-        decode/buildersDecode/dpi/buildInstructionDPI.c
-        decode/buildersDecode/dpr/buildInstructionDPR.c
-        decode/buildersDecode/m/buildInstructionM.c
+        decode/buildersDecode/decodeBranch/buildInstructionB.c
+        decode/buildersDecode/decodeDPI/buildInstructionDPI.c
+        decode/buildersDecode/decodeDPR/buildInstructionDPR.c
+        decode/buildersDecode/decodeMemory/buildInstructionM.c
 
         # Encode builders
-        encode/builders/builderB/b_Branch/builderB.c
-        encode/builders/builderDPI/dpi_Arithmetic/builderDPI_A.c
-        encode/builders/builderDPI/dpi_Logic/builderDPI_L.c
-        encode/builders/builderDPI/dpi_Move/builderDPI_MOV.c
-        encode/builders/builderDPI/dpi_Shift/builderDPI_Shift.c
-        encode/builders/builderDPR/dpi_Shift/builderDPR_Shift.c
-        encode/builders/builderDPR/dpr_Arithmetic/builderDPR_A.c
-        encode/builders/builderDPR/dpr_Logic/builderDPR_L.c
-        encode/builders/builderM/m_Access/builderM.c
+        encode/buildersEncode/encodeBranch/builderB.c
+        encode/buildersEncode/encodeDPI/dpi_Arithmetic/builderDPI_A.c
+        encode/buildersEncode/encodeDPI/dpi_Logic/builderDPI_L.c
+        encode/buildersEncode/encodeDPI/dpi_Move/builderDPI_MOV.c
+        encode/buildersEncode/encodeDPI/dpi_Shift/builderDPI_Shift.c
+        encode/buildersEncode/encodeDPR/dpr_Shift/builderDPR_Shift.c
+        encode/buildersEncode/encodeDPR/dpr_Arithmetic/builderDPR_A.c
+        encode/buildersEncode/encodeDPR/dpr_Logic/builderDPR_L.c
+        encode/buildersEncode/encodeMemory/builderM.c
         cpu/program_table/program_table.h
-        encode/builders/builders.c
+        encode/buildersEncode/buildersEncode.c
         cpu/program_table/program_table.c
         reader/reader.c
         tests/test_encode/test_encode_DPI/test_encode_dpi_shift.c
@@ -80,26 +80,26 @@ add_executable(tests
         cpu/program_table/program_table.c
 
         # Decode builders
-        decode/buildersDecode/b/buildInstructionB.c
-        decode/buildersDecode/dpi/buildInstructionDPI.c
-        decode/buildersDecode/dpr/buildInstructionDPR.c
-        decode/buildersDecode/m/buildInstructionM.c
+        decode/buildersDecode/decodeBranch/buildInstructionB.c
+        decode/buildersDecode/decodeDPI/buildInstructionDPI.c
+        decode/buildersDecode/decodeDPR/buildInstructionDPR.c
+        decode/buildersDecode/decodeMemory/buildInstructionM.c
 
         # Encode builders
-        encode/builders/builderB/b_Branch/builderB.c
-        encode/builders/builderDPI/dpi_Arithmetic/builderDPI_A.c
-        encode/builders/builderDPI/dpi_Logic/builderDPI_L.c
-        encode/builders/builderDPI/dpi_Move/builderDPI_MOV.c
-        encode/builders/builderDPI/dpi_Shift/builderDPI_Shift.c
-        encode/builders/builderDPR/dpi_Shift/builderDPR_Shift.c
-        encode/builders/builderDPR/dpr_Arithmetic/builderDPR_A.c
-        encode/builders/builderDPR/dpr_Logic/builderDPR_L.c
-        encode/builders/builderM/m_Access/builderM.c
+        encode/buildersEncode/encodeBranch/builderB.c
+        encode/buildersEncode/encodeDPI/dpi_Arithmetic/builderDPI_A.c
+        encode/buildersEncode/encodeDPI/dpi_Logic/builderDPI_L.c
+        encode/buildersEncode/encodeDPI/dpi_Move/builderDPI_MOV.c
+        encode/buildersEncode/encodeDPI/dpi_Shift/builderDPI_Shift.c
+        encode/buildersEncode/encodeDPR/dpr_Shift/builderDPR_Shift.c
+        encode/buildersEncode/encodeDPR/dpr_Arithmetic/builderDPR_A.c
+        encode/buildersEncode/encodeDPR/dpr_Logic/builderDPR_L.c
+        encode/buildersEncode/encodeMemory/builderM.c
         tests/test_encode/test_encode_DPI/test_encode_dpi_a.c
         tests/test_main.c
         tests/test_encode/test_encode_DPI/test_encode_b.c
         tests/test_encode/test_encode_DPI/test_encode_dpi_l.c
-        encode/builders/builders.c
+        encode/buildersEncode/buildersEncode.c
         "tests/test_encode/test_encode_DPI/test_encode_dpi_mov.c"
         reader/reader.c
         tests/test_encode/test_encode_DPI/test_encode_dpi_shift.c
