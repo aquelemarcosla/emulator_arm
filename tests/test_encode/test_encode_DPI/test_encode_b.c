@@ -5,15 +5,7 @@
 #include "../../../cpu/labels_table/labels_table.h"
 #include "cpu/program_table/program_table.h"
 
-static void print_binary32(uint32_t value) {
-    for (int i = 31; i >= 0; i--) {
-        printf("%u", (value >> i) & 1u);
-
-        if (i % 4 == 0)
-            printf(" ");
-    }
-    printf("\n");
-}
+#include "../../print_utils.h"
 
 void test_encode_Branch(void) {
 

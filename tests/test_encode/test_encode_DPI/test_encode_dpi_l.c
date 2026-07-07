@@ -3,15 +3,7 @@
 #include "../../../cpu/cpu.h"
 #include "../../../encode/encode.h"
 
-static void print_binary32(uint32_t value) {
-    for (int i = 31; i >= 0; i--) {
-        printf("%u", (value >> i) & 1u);
-
-        if (i % 4 == 0)
-            printf(" ");
-    }
-    printf("\n");
-}
+#include "../../print_utils.h"
 
 void test_encode_ANDI(void) {
         uint32_t result = encode("ANDI X0, X1, #100");
