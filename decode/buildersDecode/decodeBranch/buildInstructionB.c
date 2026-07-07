@@ -6,6 +6,7 @@
 /* Branches (Jumps) */
 Instruction buildBranch(uint32_t data) {
     Instruction instruction = {0};
+
     return instruction;
 }
 Instruction buildBL(uint32_t data) {

@@ -2,9 +2,20 @@
 #include "cpu/cpu.h"
 #include "stdint.h"
 
+#define GET_BITS(data, mask, type_shift, shift) \
+((type_shift == 0) ? \
+((data) << (shift)) & (mask) : \
+((data) >> (shift)) & (mask))
+
 /* Arithmetic. */
 Instruction buildADDI(uint32_t data) {
     Instruction instruction = {0};
+
+    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 0, 0);
+    instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
+    instruction.imm = (uint8_t)GET_BITS(data, 0xFFF, 1, 10);
+
     return instruction;
 }
 Instruction buildSUBI(uint32_t data) {

@@ -60,6 +60,7 @@ add_executable(emulador_arm
         tests/test_encode/test_encode_DPR/test_encode_dpr_a.c
         tests/test_encode/test_encode_DPR/test_encode_dpr_logic.c
         tests/test_encode/test_encode_M/test_encode_m.c
+        tests/test_decode/test_decode_DPI/test_decode_dpi_a.c
 )
 
 target_include_directories(emulador_arm PRIVATE
@@ -108,6 +109,7 @@ add_executable(tests
         tests/test_encode/test_encode_DPR/test_encode_dpr_logic.c
         tests/test_encode/test_encode_M/test_encode_m.c
         tests/test_encode/test_encode_M/test_encode_m.c
+        tests/test_decode/test_decode_DPI/test_decode_dpi_a.c
 )
 
 target_include_directories(tests PRIVATE
