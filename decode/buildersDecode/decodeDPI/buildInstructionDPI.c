@@ -1,11 +1,7 @@
 #include "buildInstructionDPI.h"
 #include "cpu/cpu.h"
 #include "stdint.h"
-
-#define GET_BITS(data, mask, type_shift, shift) \
-((type_shift == 0) ? \
-((data) << (shift)) & (mask) : \
-((data) >> (shift)) & (mask))
+#include "../buildersDecode.h"
 
 /* Arithmetic. */
 Instruction buildADDI(uint32_t data) {

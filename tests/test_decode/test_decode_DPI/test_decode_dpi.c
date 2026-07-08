@@ -8,7 +8,6 @@
 
 
 /* Arithmetic Tests */
-
 void test_decode_ADDI(void) {
     uint32_t encoded = encode("ADDI X0, X1, #100");
     Instruction instruction = decode(encoded);

@@ -187,7 +187,7 @@ Instruction buildB(uint32_t data) {
     // Mask opcode 3 [24:10]
     uint16_t opcode3 = GET_BITS(data, 10, 0x7FFF);
 
-    if ((opSubGp & 0x5) == 0x5) {
+    if (opSubGp == 0x5) {
         switch (opcode) {
             case 0x0: // BRANCH [0]
                 return buildBranch(data);
@@ -197,7 +197,7 @@ Instruction buildB(uint32_t data) {
                 return inst;
         }
         // BEQ and BNE
-    } else if ((opSubGp2 & 0x54) == 0x54) { 
+    } else if (opSubGp2 == 0x54) {
         switch (opcode2) {
             case 0x0: // BEQ [0000]
                 return buildBEQ(data);
@@ -207,7 +207,7 @@ Instruction buildB(uint32_t data) {
                 return inst;
         }
         // RET
-    } else if ((opSubGp3 & 0x6B) == 0x6B) {
+    } else if (opSubGp3 == 0x6B) {
         if (opcode3 == 0x2F80) { // RET [010111110000000]
             return buildRET(data);
         }

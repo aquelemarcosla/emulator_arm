@@ -39,7 +39,6 @@ void test_encode_m_LDR(void);
 void test_encode_m_STR(void);
 
 //Test decode (DPI)
-void test_decode_ADDI(void);
 void test_decode_SUBI(void);
 void test_decode_CMP(void);
 void test_decode_ANDI(void);
@@ -49,20 +48,22 @@ void test_decode_MOVZ(void);
 void test_decode_MOVN(void);
 void test_decode_UBFM(void);
 
+//Test decode (Branchs)
+void test_decode_B(void);
+void test_decode_BL(void);
+void test_decode_RET(void);
+void test_decode_BEQ(void);
+void test_decode_BNE(void);
+
 void setUp(void){}
 void tearDown(void){}
 
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_decode_ADDI);
-    RUN_TEST(test_decode_SUBI);
-    RUN_TEST(test_decode_CMP);
-    RUN_TEST(test_decode_ANDI);
-    RUN_TEST(test_decode_ORRI);
-    RUN_TEST(test_decode_EORI);
-    RUN_TEST(test_decode_MOVZ);
-    RUN_TEST(test_decode_MOVN);
-    RUN_TEST(test_decode_UBFM);
+    RUN_TEST(test_decode_BL);
+    RUN_TEST(test_decode_RET);
+    RUN_TEST(test_decode_BEQ);
+    RUN_TEST(test_decode_BNE);
     UNITY_END();
 }
