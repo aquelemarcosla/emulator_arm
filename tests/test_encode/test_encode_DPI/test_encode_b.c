@@ -8,10 +8,6 @@
 #include "../../print_utils.h"
 
 void test_encode_Branch(void) {
-
-    // Add 0 (32bits) to program_table to create PC.
-    addInstruction(0);
-
     uint64_t currentPC = getLastPC();
     uint64_t targetLabel = 12;
     int64_t targetOffset;
@@ -35,10 +31,6 @@ void test_encode_Branch(void) {
 }
 
 void test_encode_BNE(void) {
-
-    // Add 0 (32bits) to program_table to create PC.
-    addInstruction(0);
-
     uint64_t currentPC = getLastPC();
     uint64_t targetLabel = 12;
     int64_t targetOffset;
@@ -62,10 +54,6 @@ void test_encode_BNE(void) {
 }
 
 void test_encode_BEQ(void) {
-
-    // Add 0 (32bits) to program_table to create PC.
-    addInstruction(0);
-
     uint64_t currentPC = getLastPC();
     uint64_t targetLabel = 12;
     int64_t targetOffset;

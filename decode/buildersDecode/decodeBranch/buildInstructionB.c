@@ -11,7 +11,7 @@ Instruction buildBranch(uint32_t data) {
 
     // Verify sinal
     if (raw_imm & (1 << 25)) {
-        raw_imm |= 0xFFFFFFFFFF000000;
+        raw_imm |= 0xFFFFFFFFFC000000;
     }
 
     instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
@@ -25,7 +25,7 @@ Instruction buildBL(uint32_t data) {
 
     // Verify sinal
     if (raw_imm & (1 << 25)) {
-        raw_imm |= 0xFFFFFFFFFF000000;
+        raw_imm |= 0xFFFFFFFFFC000000;
     }
 
     instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);

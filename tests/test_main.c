@@ -39,6 +39,7 @@ void test_encode_m_LDR(void);
 void test_encode_m_STR(void);
 
 //Test decode (DPI)
+void test_decode_ADDI(void);
 void test_decode_SUBI(void);
 void test_decode_CMP(void);
 void test_decode_ANDI(void);
@@ -47,6 +48,15 @@ void test_decode_EORI(void);
 void test_decode_MOVZ(void);
 void test_decode_MOVN(void);
 void test_decode_UBFM(void);
+
+//Test decode (DPR)
+void test_decode_ADD(void);
+void test_decode_SUB(void);
+void test_decode_AND(void);
+void test_decode_ORR(void);
+void test_decode_EOR(void);
+void test_decode_LSRV(void);
+void test_decode_LSLV(void);
 
 //Test decode (Branchs)
 void test_decode_B(void);
@@ -61,6 +71,47 @@ void tearDown(void){}
 
 int main(void) {
     UNITY_BEGIN();
+    RUN_TEST(test_reg_read_and_write);
+    RUN_TEST(test_nzcv);
+    RUN_TEST(test_encode_Branch);
+    RUN_TEST(test_encode_BEQ);
+    RUN_TEST(test_encode_BNE);
+    RUN_TEST(test_encode_ADDI);
+    RUN_TEST(test_encode_SUBI);
+    RUN_TEST(test_encode_CMPI);
+    RUN_TEST(test_encode_ANDI);
+    RUN_TEST(test_encode_ORRI);
+    RUN_TEST(test_encode_EORI);
+    RUN_TEST(test_encode_MOVZ);
+    RUN_TEST(test_encode_MOVN);
+    RUN_TEST(test_encode_LSL);
+    RUN_TEST(test_encode_LSR);
+    RUN_TEST(test_encode_dpr_LSLV);
+    RUN_TEST(test_encode_dpr_LSRV);
+    RUN_TEST(test_encode_dpr_ADD);
+    RUN_TEST(test_encode_dpr_SUB);
+    RUN_TEST(test_encode_dpr_AND);
+    RUN_TEST(test_encode_dpr_ORR);
+    RUN_TEST(test_encode_dpr_EOR);
+    RUN_TEST(test_encode_m_LDR);
+    RUN_TEST(test_encode_m_STR);
+    RUN_TEST(test_decode_ADDI);
+    RUN_TEST(test_decode_SUBI);
+    RUN_TEST(test_decode_CMP);
+    RUN_TEST(test_decode_ANDI);
+    RUN_TEST(test_decode_ORRI);
+    RUN_TEST(test_decode_EORI);
+    RUN_TEST(test_decode_MOVZ);
+    RUN_TEST(test_decode_MOVN);
+    RUN_TEST(test_decode_UBFM);
+    RUN_TEST(test_decode_ADD);
+    RUN_TEST(test_decode_SUB);
+    RUN_TEST(test_decode_AND);
+    RUN_TEST(test_decode_ORR);
+    RUN_TEST(test_decode_EOR);
+    RUN_TEST(test_decode_LSRV);
+    RUN_TEST(test_decode_LSLV);
+    RUN_TEST(test_decode_B);
     RUN_TEST(test_decode_BL);
     RUN_TEST(test_decode_RET);
     RUN_TEST(test_decode_BEQ);

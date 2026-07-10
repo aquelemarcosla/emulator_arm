@@ -63,6 +63,7 @@ add_executable(emulador_arm
         tests/test_decode/test_decode_DPI/test_decode_dpi.c
         tests/print_utils.c
         tests/test_decode/test_decode_B/test_decode_B.c
+        tests/test_decode/test_decode_DPR/test_decode_DPR.c
 )
 
 target_include_directories(emulador_arm PRIVATE
@@ -114,6 +115,7 @@ add_executable(tests
         tests/test_decode/test_decode_DPI/test_decode_dpi.c
         tests/print_utils.c
         tests/test_decode/test_decode_B/test_decode_B.c
+        tests/test_decode/test_decode_DPR/test_decode_DPR.c
 )
 
 target_include_directories(tests PRIVATE
