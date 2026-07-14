@@ -34,13 +34,11 @@ add_executable(emulador_arm
         cpu/registers_table/registers_table.c
         cpu/labels_table/labels_table.c
 
-        # Decode builders
         decode/buildersDecode/decodeBranch/buildInstructionB.c
         decode/buildersDecode/decodeDPI/buildInstructionDPI.c
         decode/buildersDecode/decodeDPR/buildInstructionDPR.c
         decode/buildersDecode/decodeMemory/buildInstructionM.c
 
-        # Encode builders
         encode/buildersEncode/encodeBranch/builderB.c
         encode/buildersEncode/encodeDPI/dpi_Arithmetic/builderDPI_A.c
         encode/buildersEncode/encodeDPI/dpi_Logic/builderDPI_L.c
@@ -50,20 +48,12 @@ add_executable(emulador_arm
         encode/buildersEncode/encodeDPR/dpr_Arithmetic/builderDPR_A.c
         encode/buildersEncode/encodeDPR/dpr_Logic/builderDPR_L.c
         encode/buildersEncode/encodeMemory/builderM.c
+
         cpu/program_table/program_table.h
         encode/buildersEncode/buildersEncode.c
         cpu/program_table/program_table.c
         reader/reader.c
-        tests/test_encode/test_encode_DPI/test_encode_dpi_shift.c
-        tests/test_encode/test_encode_DPR/test_encode_dpr_shift.c
         execute/execute.h
-        tests/test_encode/test_encode_DPR/test_encode_dpr_a.c
-        tests/test_encode/test_encode_DPR/test_encode_dpr_logic.c
-        tests/test_encode/test_encode_M/test_encode_m.c
-        tests/test_decode/test_decode_DPI/test_decode_dpi.c
-        tests/print_utils.c
-        tests/test_decode/test_decode_B/test_decode_B.c
-        tests/test_decode/test_decode_DPR/test_decode_DPR.c
 )
 
 target_include_directories(emulador_arm PRIVATE
@@ -116,6 +106,7 @@ add_executable(tests
         tests/print_utils.c
         tests/test_decode/test_decode_B/test_decode_B.c
         tests/test_decode/test_decode_DPR/test_decode_DPR.c
+        tests/test_decode/test_decode_M/test_decode_m.c
 )
 
 target_include_directories(tests PRIVATE

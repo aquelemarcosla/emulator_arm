@@ -58,6 +58,10 @@ void test_decode_EOR(void);
 void test_decode_LSRV(void);
 void test_decode_LSLV(void);
 
+//Test decode (Memory)
+void test_decode_LDR(void);
+void test_decode_STR(void);
+
 //Test decode (Branchs)
 void test_decode_B(void);
 void test_decode_BL(void);
@@ -116,5 +120,7 @@ int main(void) {
     RUN_TEST(test_decode_RET);
     RUN_TEST(test_decode_BEQ);
     RUN_TEST(test_decode_BNE);
+    RUN_TEST(test_decode_LDR);
+    RUN_TEST(test_decode_STR);
     UNITY_END();
 }

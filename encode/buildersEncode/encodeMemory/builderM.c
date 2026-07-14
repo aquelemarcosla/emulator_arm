@@ -18,12 +18,6 @@ uint32_t builderLDR(uint32_t value, char **saveptr) {
     rn = find_register(saveptr);
     imm = find_immediate(saveptr);
 
-    // alignment.
-    if (imm % 8 != 0) {
-        fprintf(stderr, "Error: LDR immediate must be 8-byte aligned\n");
-        exit(EXIT_FAILURE);
-    }
-
     imm12 = imm / 8;
 
     instructionExit |= MOVE_BITS(value, 0x3FF, 22);
@@ -45,12 +39,6 @@ uint32_t builderSTR(uint32_t value, char **saveptr) {
     rt = find_register(saveptr);
     rn = find_register(saveptr);
     imm = find_immediate(saveptr);
-
-    // alignment.
-    if (imm % 8 != 0) {
-        fprintf(stderr, "Error: STR immediate must be 8-byte aligned\n");
-        exit(EXIT_FAILURE);
-    }
 
     imm12 = imm / 8;
 
