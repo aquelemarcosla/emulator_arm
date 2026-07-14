@@ -54,6 +54,8 @@ add_executable(emulador_arm
         cpu/program_table/program_table.c
         reader/reader.c
         execute/execute.h
+        execute/alu/alu.c
+        execute/alu/alu.h
 )
 
 target_include_directories(emulador_arm PRIVATE
