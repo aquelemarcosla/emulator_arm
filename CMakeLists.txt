@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(emulador_arm C)
+project(emulator_arm C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -23,7 +23,7 @@ target_include_directories(unity_lib PUBLIC
 )
 
 # Principal execute
-add_executable(emulador_arm
+add_executable(emulator_arm
         main.c
         cpu/cpu.c
         memory/memory.c
@@ -58,7 +58,7 @@ add_executable(emulador_arm
         execute/alu/alu.h
 )
 
-target_include_directories(emulador_arm PRIVATE
+target_include_directories(emulator_arm PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 

@@ -70,7 +70,7 @@ cmake --build build
 
 Generated binaries (Windows):
 
-- `build\emulador_arm.exe`
+- `build\emulator_arm.exe`
 - `build\tests.exe`
 
 Run tests:
@@ -82,7 +82,7 @@ Run tests:
 Run main executable:
 
 ```bash
-.\build\emulador_arm.exe
+.\build\emulator_arm.exe
 ```
 
 > **Note:** the main binary compiles, but it still does not represent a complete emulator due to the gaps described above.
