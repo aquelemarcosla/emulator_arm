@@ -11,7 +11,7 @@ typedef struct {
 } CPU;
 
 typedef struct {  // instruction struct
-    uint8_t type;
+    uint16_t opcode;
     uint8_t rd;
     uint8_t rn;    // R1
     uint8_t rm;    // R2

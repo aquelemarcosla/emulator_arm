@@ -17,7 +17,7 @@ void test_decode_B(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -27,7 +27,7 @@ void test_decode_B(void) {
     printf("imm      : ");
     print_bits_with_value((uint64_t)instruction.imm, 12, 0);
 
-    TEST_ASSERT_EQUAL_UINT8(10, instruction.type);
+    TEST_ASSERT_EQUAL_UINT16(0x5, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rm);
@@ -44,7 +44,7 @@ void test_decode_BL(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -54,7 +54,7 @@ void test_decode_BL(void) {
     printf("imm      : ");
     print_bits_with_value((uint64_t)instruction.imm, 64, 0);
 
-    TEST_ASSERT_EQUAL_UINT8(10, instruction.type);
+    TEST_ASSERT_EQUAL_UINT16(0x5, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rm);
@@ -71,7 +71,7 @@ void test_decode_BEQ(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -81,7 +81,7 @@ void test_decode_BEQ(void) {
     printf("imm      : ");
     print_bits_with_value((uint64_t)instruction.imm, 64, 0);
 
-    TEST_ASSERT_EQUAL_UINT8(10, instruction.type);
+    TEST_ASSERT_EQUAL_UINT16(0x54, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rm);
@@ -98,7 +98,7 @@ void test_decode_BNE(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -108,7 +108,7 @@ void test_decode_BNE(void) {
     printf("imm      : ");
     print_bits_with_value((uint64_t)instruction.imm, 64, 0);
 
-    TEST_ASSERT_EQUAL_UINT8(10, instruction.type);
+    TEST_ASSERT_EQUAL_UINT16(0x54, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(1, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rm);
@@ -123,7 +123,7 @@ void test_decode_RET(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -133,7 +133,7 @@ void test_decode_RET(void) {
     printf("imm      : ");
     print_bits_with_value((uint64_t)instruction.imm, 64, 0);
 
-    TEST_ASSERT_EQUAL_UINT8(11, instruction.type);
+    TEST_ASSERT_EQUAL_UINT16(0x6B, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(30, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rm);

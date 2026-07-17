@@ -14,7 +14,7 @@ Instruction buildBranch(uint32_t data) {
         raw_imm |= 0xFFFFFFFFFC000000;
     }
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = GET_BITS(data, 0x1F, 1, 26);
     instruction.imm = raw_imm * 4;
 
     return instruction;
@@ -28,7 +28,7 @@ Instruction buildBL(uint32_t data) {
         raw_imm |= 0xFFFFFFFFFC000000;
     }
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = GET_BITS(data, 0x1F, 1, 26);
     instruction.imm = raw_imm * 4;
 
     return instruction;
@@ -44,7 +44,7 @@ Instruction buildBEQ(uint32_t data) {
         raw_imm |= 0xFFFFFFFFFFF80000;
     }
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = GET_BITS(data, 0xFF, 1, 24);
     instruction.imm = raw_imm * 4;
 
     // Condition, not register.
@@ -61,7 +61,7 @@ Instruction buildBNE(uint32_t data) {
         raw_imm |= 0xFFFFFFFFFFF80000;
     }
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = GET_BITS(data, 0xFF, 1, 24);
     instruction.imm = raw_imm * 4;
 
     // Condition, not register.
@@ -74,7 +74,7 @@ Instruction buildBNE(uint32_t data) {
 Instruction buildRET(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = GET_BITS(data, 0x7F, 1, 25);
 
     // Return register, X30
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);

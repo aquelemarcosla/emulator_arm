@@ -4,4 +4,6 @@
 
 void execute(Instruction instruction, CPU *cpu);
 
+#endif
+
 

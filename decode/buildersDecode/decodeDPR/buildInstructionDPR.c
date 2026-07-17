@@ -7,7 +7,7 @@
 Instruction buildADD(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = (uint8_t)GET_BITS(data, 0xF, 1, 25);
     instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 1, 0);
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
     instruction.rm = (uint8_t)GET_BITS(data, 0x1F, 1, 16);
@@ -17,7 +17,7 @@ Instruction buildADD(uint32_t data) {
 Instruction buildSUB(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = (uint8_t)GET_BITS(data, 0xF, 1, 25);
     instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 0, 0);
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
     instruction.rm = (uint8_t)GET_BITS(data, 0x1F, 1, 16);
@@ -29,7 +29,7 @@ Instruction buildSUB(uint32_t data) {
 Instruction buildAND(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = (uint8_t)GET_BITS(data, 0xF, 1, 25);
     instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 0, 0);
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
     instruction.rm = (uint8_t)GET_BITS(data, 0x1F, 1, 16);
@@ -39,7 +39,7 @@ Instruction buildAND(uint32_t data) {
 Instruction buildORR(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = (uint8_t)GET_BITS(data, 0xF, 1, 25);
     instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 0, 0);
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
     instruction.rm = (uint8_t)GET_BITS(data, 0x1F, 1, 16);
@@ -49,7 +49,7 @@ Instruction buildORR(uint32_t data) {
 Instruction buildEOR(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = (uint8_t)GET_BITS(data, 0xF, 1, 25);
     instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 0, 0);
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
     instruction.rm = (uint8_t)GET_BITS(data, 0x1F, 1, 16);
@@ -61,7 +61,7 @@ Instruction buildEOR(uint32_t data) {
 Instruction buildLSRV(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = (uint8_t)GET_BITS(data, 0xF, 1, 25);
     instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 0, 0);
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
     instruction.rm = (uint8_t)GET_BITS(data, 0x1F, 1, 16);
@@ -71,7 +71,7 @@ Instruction buildLSRV(uint32_t data) {
 Instruction buildLSLV(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.type = (uint8_t)GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = (uint8_t)GET_BITS(data, 0xF, 1, 25);
     instruction.rd = (uint8_t)GET_BITS(data, 0x1F, 0, 0);
     instruction.rn = (uint8_t)GET_BITS(data, 0x1F, 1, 5);
     instruction.rm = (uint8_t)GET_BITS(data, 0x1F, 1, 16);

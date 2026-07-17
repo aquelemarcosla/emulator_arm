@@ -16,7 +16,7 @@ void test_decode_ADD(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -37,7 +37,7 @@ void test_decode_SUB(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -60,7 +60,7 @@ void test_decode_AND(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -81,7 +81,7 @@ void test_decode_ORR(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -102,7 +102,7 @@ void test_decode_EOR(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -125,7 +125,7 @@ void test_decode_LSRV(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
@@ -146,7 +146,7 @@ void test_decode_LSLV(void) {
     printf("Encoded  : 0x%08X\n", encoded);
     print_binary32(encoded);
     printf("type     : ");
-    print_bits_with_value(instruction.type, 4, 0);
+    print_bits_with_value(instruction.opcode, 4, 0);
     printf("rd       : ");
     print_bits_with_value(instruction.rd, 5, 0);
     printf("rn       : ");
