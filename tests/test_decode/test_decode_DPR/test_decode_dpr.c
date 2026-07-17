@@ -24,6 +24,7 @@ void test_decode_ADD(void) {
     printf("rm       : ");
     print_bits_with_value(instruction.rm, 5, 0);
 
+    TEST_ASSERT_EQUAL_UINT16(0x458, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(1, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(2, instruction.rm);
@@ -45,6 +46,7 @@ void test_decode_SUB(void) {
     printf("rm       : ");
     print_bits_with_value(instruction.rm, 5, 0);
 
+    TEST_ASSERT_EQUAL_UINT16(0x658, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(3, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(4, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(5, instruction.rm);
@@ -68,6 +70,7 @@ void test_decode_AND(void) {
     printf("rm       : ");
     print_bits_with_value(instruction.rm, 5, 0);
 
+    TEST_ASSERT_EQUAL_UINT16(0x450, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(6, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(7, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(8, instruction.rm);
@@ -89,6 +92,7 @@ void test_decode_ORR(void) {
     printf("rm       : ");
     print_bits_with_value(instruction.rm, 5, 0);
 
+    TEST_ASSERT_EQUAL_UINT16(0x550, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(9, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(10, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(11, instruction.rm);
@@ -110,6 +114,7 @@ void test_decode_EOR(void) {
     printf("rm       : ");
     print_bits_with_value(instruction.rm, 5, 0);
 
+    TEST_ASSERT_EQUAL_UINT16(0x650, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(12, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(13, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(14, instruction.rm);
@@ -133,6 +138,7 @@ void test_decode_LSRV(void) {
     printf("rm       : ");
     print_bits_with_value(instruction.rm, 5, 0);
 
+    TEST_ASSERT_EQUAL_UINT16(0x4D6, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(15, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(16, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(17, instruction.rm);
@@ -154,6 +160,7 @@ void test_decode_LSLV(void) {
     printf("rm       : ");
     print_bits_with_value(instruction.rm, 5, 0);
 
+    TEST_ASSERT_EQUAL_UINT16(0x4D6, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(18, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(19, instruction.rn);
     TEST_ASSERT_EQUAL_UINT8(20, instruction.rm);

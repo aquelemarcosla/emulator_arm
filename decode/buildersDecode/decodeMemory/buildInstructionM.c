@@ -7,7 +7,7 @@
 Instruction buildLDR(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.opcode = GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = GET_BITS(data, 0x3FF, 1, 22);
 
     int32_t raw_imm = (int32_t)GET_BITS(data, 0xFFF, 1, 10);
     raw_imm = (raw_imm << 20) >> 20;
@@ -21,7 +21,7 @@ Instruction buildLDR(uint32_t data) {
 Instruction buildSTR(uint32_t data) {
     Instruction instruction = {0};
 
-    instruction.opcode = GET_BITS(data, 0xF, 1, 25);
+    instruction.opcode = GET_BITS(data, 0x3FF, 1, 22);
 
     int32_t raw_imm = (int32_t)GET_BITS(data, 0xFFF, 1, 10);
     raw_imm = (raw_imm << 20) >> 20;

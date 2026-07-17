@@ -23,7 +23,7 @@ void test_decode_LDR(void) {
     printf("imm      : ");
     print_bits_with_value((uint64_t)instruction.imm, 12, 0);
 
-    TEST_ASSERT_EQUAL_UINT8(12, instruction.opcode);
+    TEST_ASSERT_EQUAL_UINT16(0x3E5, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(1, instruction.rn);
     TEST_ASSERT_EQUAL_INT64(-8, instruction.imm);
@@ -45,7 +45,7 @@ void test_decode_STR(void) {
     printf("imm      : ");
     print_bits_with_value((uint64_t)instruction.imm, 12, 0);
 
-    TEST_ASSERT_EQUAL_UINT8(12, instruction.opcode);
+    TEST_ASSERT_EQUAL_UINT16(0x3E4, instruction.opcode);
     TEST_ASSERT_EQUAL_UINT8(0, instruction.rd);
     TEST_ASSERT_EQUAL_UINT8(1, instruction.rn);
     TEST_ASSERT_EQUAL_INT64(8, instruction.imm);
