@@ -13,7 +13,7 @@ typedef enum {
     ALU_LSR
 } TypeOp;
 
-uint64_t execute_alu(CPU *cpu, uint64_t op1, uint64_t op2, TypeOp type_op);
+uint64_t execute_alu(uint64_t op1, uint64_t op2, TypeOp type_op);
 
 
 #endif //EMULATOR_ARM_ALU_H

@@ -56,6 +56,14 @@ add_executable(emulator_arm
         execute/execute.h
         execute/alu/alu.c
         execute/alu/alu.h
+        execute/executes/executeB/executeB.c
+        execute/executes/executeB/executeB.h
+        execute/executes/executeDPI/executeDPI.c
+        execute/executes/executeDPI/executeDPI.h
+        execute/executes/executeDPR/executeDPR.c
+        execute/executes/executeDPR/executeDPR.h
+        execute/executes/executeM/executeM.c
+        execute/executes/executeM/executeM.h
 )
 
 target_include_directories(emulator_arm PRIVATE

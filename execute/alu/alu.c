@@ -1,7 +1,7 @@
 #include "alu.h"
 #include "cpu/cpu.h"
 
-uint64_t execute_alu(CPU *cpu, uint64_t op1, uint64_t op2, TypeOp type_op) {
+uint64_t execute_alu(uint64_t op1, uint64_t op2, TypeOp type_op) {
     uint64_t result = 0;
 
     switch (type_op) {
