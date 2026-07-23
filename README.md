@@ -7,15 +7,15 @@ Educational 64-bit ARM architecture emulator focused on instruction representati
 
 ## Current status
 
-| Component | Status | Notes |
-| --- | --- | --- |
-| CPU (`cpu/`) | ✅ | Registers, PC, SP, and NZCV |
-| Memory (`memory/`) | ✅ | Flat 128 KB model |
-| Encode (`encode/`) | ✅ | DPI, DPR, memory, and branch builders |
-| Decode (`decode/`) | ✅ | Group classification + builders |
+| Component | Status | Notes                                                 |
+| --- | --- |-------------------------------------------------------|
+| CPU (`cpu/`) | ✅ | Registers, PC, SP, and NZCV                           |
+| Memory (`memory/`) | ✅ | Flat 128 KB model                                     |
+| Encode (`encode/`) | ✅ | DPI, DPR, memory, and branch builders                 |
+| Decode (`decode/`) | ✅ | Group classification + builders                       |
 | Reader (`reader/`) | 🟡 | Processes text lines (not a full file/program loader) |
-| Execute (`execute/`) | 🔴 | Structure exists, execution logic is still empty |
-| `main.c` | 🔴 | No emulator execution loop yet |
+| Execute (`execute/`) | 🟡 | Parcial, some instructions are completed              |
+| `main.c` | 🔴 | No emulator execution loop yet                        |
 
 ## What already works
 
@@ -34,10 +34,9 @@ Support is implemented for the same groups above (DPI, DPR, memory, and branch),
 
 ## Explicit gaps and limitations
 
-1. **No real execution yet:** `execute()` still does not apply instruction semantics to CPU state.
-2. **No complete flow in `main`:** there is no integrated fetch/decode/execute cycle.
-3. **Partial reader:** it does not provide a full program loading/execution pipeline.
-4. **Known failing tests:** there are current inconsistencies in immediate logical decode cases (`ANDI`, `ORRI`, `EORI`).
+1. **No complete flow in `main`:** there is no integrated fetch/decode/execute cycle.
+2. **Partial reader:** it does not provide a full program loading/execution pipeline.
+3. **Known failing tests:** there are current inconsistencies in immediate logical decode cases (`ANDI`, `ORRI`, `EORI`).
 
 ## Project structure
 
