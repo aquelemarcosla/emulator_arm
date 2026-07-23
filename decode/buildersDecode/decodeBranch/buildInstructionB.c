@@ -62,6 +62,7 @@ Instruction buildBNE(uint32_t data) {
     }
 
     instruction.opcode = GET_BITS(data, 0xFF, 1, 24);
+    instruction.opcode += 1;
     instruction.imm = raw_imm * 4;
 
     // Condition, not register.

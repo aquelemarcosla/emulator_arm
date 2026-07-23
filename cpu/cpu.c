@@ -42,11 +42,3 @@ uint64_t reg_read(CPU *cpu, int reg) {  // Register read
 
     return cpu->regs[reg];
 }
-
-uint8_t get_nzcv(CPU *cpu) {
-    return cpu->nzcv;
-}
-
-void set_nzcv(CPU *cpu, uint8_t nzcv) {
-    cpu->nzcv = nzcv;
-}

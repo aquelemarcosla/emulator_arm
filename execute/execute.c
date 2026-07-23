@@ -1,4 +1,5 @@
 #include "cpu/cpu.h"
+#include "executes/executeB/executeB.h"
 #include "executes/executeDPI/executeDPI.h"
 
 void execute(Instruction *instruction, CPU *cpu) {
@@ -20,6 +21,16 @@ void execute(Instruction *instruction, CPU *cpu) {
             return executeMOVZ(instruction, cpu);
         case 0x494:
             return executeMOVN(instruction, cpu);
+        case 0x5:
+            return executeB(instruction,cpu);
+        case 0x25:
+            return executeBL(instruction,cpu);
+        case 0xD6BE03C0:
+            return executeRET(instruction, cpu);
+        case 0x54:
+            return executeBEQ(instruction, cpu);
+        case 0x55:
+            return executeBNE(instruction, cpu);
         default:
             return;
     }
