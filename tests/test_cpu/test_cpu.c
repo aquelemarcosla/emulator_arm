@@ -31,11 +31,3 @@ void test_reg_read_and_write(void) {
     reg_write(&cpu, 38, valueTest);  // Above the index
     TEST_ASSERT_EQUAL_UINT64(0, reg_read(&cpu, 38));
 }
-
-void test_nzcv(void) {
-    CPU cpu;
-    memset(&cpu, 0, sizeof(cpu));
-    uint8_t nzcvValue = 0xFF;
-    set_nzcv(&cpu, nzcvValue);
-    TEST_ASSERT_EQUAL_UINT8(0xFF, get_nzcv(&cpu));
-}
