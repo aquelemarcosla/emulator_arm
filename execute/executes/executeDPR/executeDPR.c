@@ -9,6 +9,8 @@ void executeADD(Instruction *instruction, CPU *cpu) {
     uint64_t result = execute_alu(rn_val, rm_val, ALU_ADD);
 
     reg_write(cpu, instruction->rd, result);
+
+    cpu->pc += 4;
 }
 
 void executeSUB(Instruction *instruction, CPU *cpu) {
@@ -18,6 +20,8 @@ void executeSUB(Instruction *instruction, CPU *cpu) {
     uint64_t result = execute_alu(rn_val, rm_val, ALU_SUB);
 
     reg_write(cpu, instruction->rd, result);
+
+    cpu->pc += 4;
 }
 
 void executeAND(Instruction *instruction, CPU *cpu) {
@@ -27,6 +31,8 @@ void executeAND(Instruction *instruction, CPU *cpu) {
     uint64_t result = execute_alu(rn_val, rm_val, ALU_AND);
 
     reg_write(cpu, instruction->rd, result);
+
+    cpu->pc += 4;
 }
 
 void executeORR(Instruction *instruction, CPU *cpu) {
@@ -36,6 +42,8 @@ void executeORR(Instruction *instruction, CPU *cpu) {
     uint64_t result = execute_alu(rn_val, rm_val, ALU_ORR);
 
     reg_write(cpu, instruction->rd, result);
+
+    cpu->pc += 4;
 }
 
 void executeEOR(Instruction *instruction, CPU *cpu) {
@@ -45,6 +53,8 @@ void executeEOR(Instruction *instruction, CPU *cpu) {
     uint64_t result = execute_alu(rn_val, rm_val, ALU_EOR);
 
     reg_write(cpu, instruction->rd, result);
+
+    cpu->pc += 4;
 }
 
 void executeLSLV(Instruction *instruction, CPU *cpu) {
@@ -54,6 +64,8 @@ void executeLSLV(Instruction *instruction, CPU *cpu) {
     uint64_t result = execute_alu(rn_val, rm_val, ALU_LSL);
 
     reg_write(cpu, instruction->rd, result);
+
+    cpu->pc += 4;
 }
 
 void executeLSRV(Instruction *instruction, CPU *cpu) {
@@ -63,4 +75,6 @@ void executeLSRV(Instruction *instruction, CPU *cpu) {
     uint64_t result = execute_alu(rn_val, rm_val, ALU_LSR);
 
     reg_write(cpu, instruction->rd, result);
+
+    cpu->pc += 4;
 }
