@@ -13,8 +13,8 @@ Educational 64-bit ARM architecture emulator focused on instruction representati
 | Memory (`memory/`) | ✅ | Flat 128 KB model                                     |
 | Encode (`encode/`) | ✅ | DPI, DPR, memory, and branch builders                 |
 | Decode (`decode/`) | ✅ | Group classification + builders                       |
-| Reader (`reader/`) | 🟡 | Processes text lines (not a full file/program loader) |
-| Execute (`execute/`) | 🟡 | Parcial, some instructions are completed              |
+| Reader (`reader/`) | ✅ | Processes text lines (not a full file/program loader) |
+| Execute (`execute/`) | ✅ | Parcial, some instructions are completed              |
 | `main.c` | 🔴 | No emulator execution loop yet                        |
 
 ## What already works
